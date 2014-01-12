@@ -2,3 +2,4 @@ timezone: Europe/London
 
 tumblr:
   api_key: IqVMfNlzbFWoqLH7ESLRcY0ZxocWIopDFdZQaBVd3sJ3MNdNIh
+  api_uri: //api.tumblr.com/v2/blog/msyea.co.uk/
