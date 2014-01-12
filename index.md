@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Does this work?
 ---
 <h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
