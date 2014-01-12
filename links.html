@@ -14,10 +14,10 @@
     $(function() {
         $.ajax({
             type: 'GET',
-            url: '{{ site.tumblr.api_uri }}/posts/link',
+            url: '{{ site.tumblr.api.endpoint }}/posts/link',
             dataType: 'jsonp',
             data: {
-                api_key: '{{ site.tumblr.api_key }}'
+                api_key: '{{ site.tumblr.api.key }}'
             },
             success: function(data, textStatus, jqXHR) {
                 if ('OK' !== data.meta.msg) {
