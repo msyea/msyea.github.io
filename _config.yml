@@ -2,5 +2,5 @@ timezone: Europe/London
 
 tumblr:
   api:
-    endpoint: //api.tumblr.com/v2/blog/msyea.co.uk/
+    endpoint: //api.tumblr.com/v2/blog/msyea.co.uk
     key: IqVMfNlzbFWoqLH7ESLRcY0ZxocWIopDFdZQaBVd3sJ3MNdNIh
