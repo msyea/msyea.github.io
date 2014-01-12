@@ -15,21 +15,11 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1 class="header">index.html</h1>
-        <p class="header"></p>
-
-        <ul>
-          <li><a class="buttons github" href="https://github.com/msyea">GitHub Profile</a></li>
-        </ul>
-
-      </header>
+      {% include header.html %}
       <section>
 {{ content }}
       </section>
-      <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
+      {% include footer.html %}
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
         
