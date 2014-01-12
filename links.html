@@ -11,14 +11,13 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    // {{ site.tumblr.api_key }}
     $(function() {
         $.ajax({
             type: 'GET',
-            url: '//api.tumblr.com/v2/blog/msyea.co.uk/posts/link',
+            url: '{{ site.tumblr.api_uri }}/posts/link',
             dataType: 'jsonp',
             data: {
-                api_key: 'IqVMfNlzbFWoqLH7ESLRcY0ZxocWIopDFdZQaBVd3sJ3MNdNIh'
+                api_key: '{{ site.tumblr.api_key }}'
             },
             success: function(data, textStatus, jqXHR) {
                 if ('OK' !== data.meta.msg) {
