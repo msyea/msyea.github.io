@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{{ page.title }} :: msyea</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+      {% include stylesheets.html %}
+
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -23,5 +23,6 @@
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
         
+      {% include scripts.html %}
   </body>
 </html>
