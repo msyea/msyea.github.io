@@ -1,3 +1,18 @@
-<div class="post">
-{{ content }}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>{{ page.title }} :: msyea</title>
+    {% include stylesheets.html %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    {% include header.html %}
+    <div class="container">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+</html>
