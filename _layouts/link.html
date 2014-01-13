@@ -1,4 +1,6 @@
 <div class="post">
-{{ page.categories }}
-{{ content }}
+{{ page.categories }}<br/>
+{{ page.category }}<br/>
+{{ content }}<br/>
+{% for category in page.categories %}category,{% endfor %}
 </div>
