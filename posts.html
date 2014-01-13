@@ -6,11 +6,11 @@ title: Posts
   <li><a href="/">Home</a></li>
   <li class="active">Posts</li>
 </ol>
-<ul>
+<div class="list-group">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {% for category in post.categories %}<span class="label label-default">{{ category }}</span> {% endfor %}
-    </li>
+    <a href="{{ post.url }}" class="list-group-item">
+      <h4 class="list-group-item-heading">{{ post.title }}</h4>
+      <p class="list-group-item-text">{% for category in post.categories %}<span class="label label-default">{{ category }}</span> {% endfor %}</p>
+    </a>
   {% endfor %}
-</ul>
+</div>
