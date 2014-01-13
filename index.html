@@ -31,9 +31,16 @@ title: Things that excite me at the moment.
             </li>
         </ul>
         <ul>
-          {% for linka in site.categories.links %}
+          {% for link in site.categories.links %}
             <li>
-              <a href="{{ linka.url }}">{{ linka.title }}</a>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
             </li>
           {% endfor %}
         </ul>
