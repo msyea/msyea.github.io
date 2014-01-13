@@ -30,5 +30,15 @@ title: Things that excite me at the moment.
                 <a href="https://circleci.com/">CircleCI</a> Simplify my life.
             </li>
         </ul>
+        <ul>
+          {% for post in site.posts %}
+          {% if post.category == 'links' %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <p>{{ post.excerpt }}</p>
+            </li>
+            {$ endif %}
+          {% endfor %}
+        </ul>
     </div>
 </div>
