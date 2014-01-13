@@ -6,7 +6,7 @@ title: Posts
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
-      {% category in post.categories %}<span class="badge">{{ category }}</span> {% endfor %}
+      {% for category in post.categories %}<span class="badge">{{ category }}</span> {% endfor %}
     </li>
   {% endfor %}
 </ul>
