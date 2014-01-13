@@ -10,4 +10,12 @@
       <priority>0.8</priority>
    </url>
 {% endfor %}
+{% for page in site.pages %}
+   <url>
+      <loc>http://msyea.github.io{{ page.url }}</loc>
+      <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+{% endfor %}
 </urlset>
