@@ -4,7 +4,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for post in site.posts %}
    <url>
-      <loc>http://msyea.github.io{{ post.url }}</loc>
+      <loc>http://msyea.co.uk{{ post.url }}</loc>
       <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -12,7 +12,7 @@
 {% endfor %}
 {% for page in site.pages %}
    <url>
-      <loc>http://msyea.github.io{{ page.url }}</loc>
+      <loc>http://msyea.co.uk{{ page.url }}</loc>
       <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
