@@ -1,5 +1,7 @@
 timezone: Europe/London
 
+markdown: kramdown
+
 tumblr:
   api:
     endpoint: //api.tumblr.com/v2/blog/simonmayes.co.uk
