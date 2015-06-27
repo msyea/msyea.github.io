@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Homepage
+title: Home
 ---
 <div class="row">
     <div class="col-md-12 page-header">
@@ -11,6 +11,20 @@ title: Homepage
 </div>
 <div class="row">
     <div class="class-md-12">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          {% for category in site.categories %}
+          <li role="presentation" class="active"><a href="#pane-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          {% for category in site.categories %}
+          <div role="tabpanel" class="tab-pane active" id="pane-{{ category }}">...</div>
+          {% endfor %}
+        </div>
 
     </div>
 </div>
