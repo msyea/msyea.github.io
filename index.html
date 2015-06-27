@@ -15,14 +15,14 @@ title: Home
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           {% for category in site.categories %}
-          <li role="presentation" class="active"><a href="#pane-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category }}</a></li>
+          <li role="presentation" class="active"><a href="#pane-{{ category[0] }}" aria-controls="home" role="tab" data-toggle="tab">{{ category[0] | capitalize }}</a></li>
           {% endfor %}
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
           {% for category in site.categories %}
-          <div role="tabpanel" class="tab-pane active" id="pane-{{ category }}">...</div>
+          <div role="tabpanel" class="tab-pane active" id="pane-{{ category[0] }}">...</div>
           {% endfor %}
         </div>
 
