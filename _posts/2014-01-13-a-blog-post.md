@@ -1,7 +1,8 @@
 ---
 title: A blog post
 layout: default
-categories: [something,a]
+categories: [something]
 tags: [something,a,b]
 ---
 # A blog post
+Some content on bog posts
