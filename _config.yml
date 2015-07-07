@@ -10,3 +10,10 @@ gems:
 
 collections:
   - gallery
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
