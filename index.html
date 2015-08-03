@@ -8,7 +8,7 @@ my_categories:
 <div class="row">
   <div class="col-md-12 page-header">
     <h1>Simon Mayes
-      <small>Adventurer and entrepreneur.</small>
+      <small>Adventurer, entrepreneur and co-founder of <a href="http://mayeskennedy.co.uk">MayesKennedy</a>.</small>
     </h1>
     <p>You found me! Stay here if you're interested in software (mainly web/mobile stuff) and adventure sports (mainly climbing/mountaineering).</p>
   </div>
@@ -17,7 +17,7 @@ my_categories:
   <div class="class-md-12">
     <ul class="nav nav-tabs" role="tablist">
       {% for category in page.my_categories %}
-      <li role="presentation" {% if forloop.first %} class="active" {% endif %}><a href="#pane-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
+      <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#pane-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
       {% endfor %}
       <li role="presentation"><a href="#pane-gallery" aria-controls="home" role="tab" data-toggle="tab">Gallery</a></li>
     </ul>
@@ -26,7 +26,7 @@ my_categories:
       <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="pane-{{ category }}">
         <p>This is the most recent post from
           <span class="label label-primary">{{ category | capitalize }}</span>. To view all posts, <a href="/{{ category }}">click here</a>.
-          <p>
+        </p>
             {% assign post = site.categories[category] | first %}
             <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <p>{% for category in post.categories %}
