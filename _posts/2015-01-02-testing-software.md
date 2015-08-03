@@ -1,7 +1,7 @@
 ---
 title: Test Software
 layout: default
-categories: [software]
+categories: [technology]
 tags: [a,b]
 ---
 Some content on software
