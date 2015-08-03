@@ -1,6 +1,5 @@
 ---
 title: Test Software
-layout: default
 categories: [technology]
 tags: [a,b]
 ---

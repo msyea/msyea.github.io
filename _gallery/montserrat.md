@@ -1,4 +1,4 @@
 ---
 title: Montserrat
-src: images/gallery/IMG_2416.JPG
+src: img/gallery/IMG_2416.JPG
 ---

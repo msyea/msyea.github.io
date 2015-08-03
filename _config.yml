@@ -10,6 +10,7 @@ gems:
 
 collections:
   - gallery
+  - link
 
 defaults:
   -

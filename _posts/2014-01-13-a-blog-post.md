@@ -1,6 +1,5 @@
 ---
 title: A blog post
-layout: default
 categories: [something]
 tags: [something,a,b]
 ---

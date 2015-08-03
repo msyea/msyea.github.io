@@ -1,6 +1,6 @@
 ---
 title: Do you have flair?
-category: software
+category: technology
 tag: stackoverflow
 ---
 <a href="http://stackoverflow.com/users/143589/simon">
