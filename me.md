@@ -32,7 +32,7 @@ I'm a **Director** at MayesKennedy and am responsible for *Product Development*,
 
 ### [Trovus](http://trovus.co.uk) *2013 - 2014*
 
-Trouvs were a MayesKennedy client. I joined the team for a year as **Business Analyst and Software Engineer** to help build up a technical team and capability. I continued their *Product Development* in the <strike>big</strike> data and visualisation space. Used Microsoft Azure and experimented with .Net.
+Trouvs were a MayesKennedy client. I joined the team for a year as **Business Analyst and Software Engineer** to help them build up a technical team and capability. I continued their *Product Development* in the <strike>big</strike> data and visualisation space. Used Microsoft Azure and experimented with .Net.
 
 ### [Intendance (now Treat Digital)](http://treatdigital.com) *2009 - 2011*
 I cut my teeth at Intendance. I originally started as a **Junior Developer** working with PHP and MySQL but quickly
