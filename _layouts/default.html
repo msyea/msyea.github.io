@@ -10,6 +10,20 @@
   <body>
     {% include header.html %}
     <div id="main-container" class="container">
+      <ol class="breadcrumb">
+        {% for category in page.categories %}<li><a href="/{{ category }}">{{ category }}</a></li>{% endfor %}
+        <li class="active">{{ page.title }}</li>
+      </ol>
+      <div class="row">
+        <div class="col-md-12 page-header">
+          <h1>{{ page.title }}</h1>
+          <p>{% for category in page.categories %}
+            <span class="label label-primary">{{ category }}</span> {% endfor %}{% for tag in page.tags %}
+            <span class="label label-info">{{ tag }}</span> {% endfor %}
+            <span class="label label-default">{{ page.date }}</span>
+          </p>
+        </div>
+      </div>
       {{ content }}
     </div>
     {% include footer.html %}
