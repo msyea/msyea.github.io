@@ -15,6 +15,7 @@ hp_categories:
 </div>
 <div class="row">
   <div class="class-md-12">
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     <ul class="nav nav-tabs" role="tablist">
       {% for category in page.hp_categories %}
       <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#pane-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
