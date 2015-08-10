@@ -1,0 +1,17 @@
+{
+  "name": "msyea.uk",
+  "version": "0.0.1",
+  "homepage": "http://msyea.uk",
+  "authors": [
+    "Simon Mayes <simon@msyea.co.uk>"
+  ],
+  "main": "index.html",
+  "license": "Copyright Simon Mayes 2015. All Rights Reserved.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
