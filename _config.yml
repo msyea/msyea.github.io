@@ -21,3 +21,4 @@ defaults:
 
 sass:
   sass_dir: css/_sass
+  style: :compressed
