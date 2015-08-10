@@ -25,7 +25,7 @@ hp_categories:
       {% for category in page.hp_categories %}
       <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="pane-{{ category }}">
         <p>This is the most recent post from
-          <span class="label label-primary">{{ category | capitalize }}</span>. To view all posts, <a href="/{{ category }}">click here</a>.
+          <span class="label label-primary">{{ category | capitalize }}</span>. To view all posts, <a href="/{{ category }}.html">click here</a>.
         </p>
             {% assign post = site.categories[category] | first %}
             <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
