@@ -12,7 +12,7 @@
     <div id="main-container" class="container">
     {% if page.categories %}
       <ol class="breadcrumb">
-        {% for category in page.categories %}<li><a href="/{{ category }}">{{ category }}</a></li>{% endfor %}
+        {% for category in page.categories %}<li><a href="/{{ category }}.html">{{ category }}</a></li>{% endfor %}
         <li class="active">{{ page.title }}</li>
       </ol>
       {% endif %}
