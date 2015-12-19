@@ -8,7 +8,8 @@ title: Links
     <div class="media-body">
       <h4 class="media-heading"><a href="{{ link.link }}">{{ link.title }}</a></h4>
       <p>{% for category in link.categories %}
-        <span class="label label-primary">{{ category }}</span> {% endfor %}
+        <span class="label label-primary">{{ category }}</span> {% endfor %}{% for tag in link.tags %}
+        <span class="label label-info">{{ tag }}</span> {% endfor %}
       </p>
     </div>
   </li>
