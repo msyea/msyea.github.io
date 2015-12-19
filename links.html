@@ -7,6 +7,9 @@ title: Links
   <li class="media">
     <div class="media-body">
       <h4 class="media-heading"><a href="{{ link.link }}">{{ link.title }}</a></h4>
+      <p>{% for category in link.categories %}
+        <span class="label label-primary">{{ category }}</span> {% endfor %}
+      </p>
     </div>
   </li>
 {% endfor %}
