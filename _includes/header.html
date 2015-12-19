@@ -14,9 +14,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="site-nav">
         <ul class="nav navbar-nav">
-          <li class="{% if page.categories contains 'climbing' or page.name == 'climbing.html' %}active{% endif %}"><a href="/climbing.html">Climbing</a></li>
-          <li class="{% if page.categories contains 'technology' or page.name == 'technology.html' %}active{% endif %}"><a href="/technology.html">Technology</a></li>
-          <li class="{% if page.categories contains 'links' or page.name == 'links.html' %}active{% endif %}"><a href="/links.html">Links</a></li>
+          <li{% if page.categories contains 'climbing' or page.name == 'climbing.html' %} class="active"{% endif %}><a href="/climbing.html">Climbing</a></li>
+          <li{% if page.categories contains 'technology' or page.name == 'technology.html' %} class="active"{% endif %}><a href="/technology.html">Technology</a></li>
+          <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %}><a href="/links.html">Links</a></li>
           <!-- li><a href="/me.html">About</a></li -->
         </ul>
         <form id="search" class="navbar-form navbar-right" role="search" action="/search.html">
