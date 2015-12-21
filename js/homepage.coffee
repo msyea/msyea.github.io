@@ -2,7 +2,7 @@
 ---
 $ ->
   hash = document.location.hash
-  prefix = 'tab-'
+  prefix = ''
   $('.nav-tabs a[href='+hash.replace(prefix,'')+']').tab('show') if hash
   $('.nav-tabs a').on 'shown.bs.tab',
   (e) ->
