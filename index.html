@@ -16,13 +16,13 @@ hp_categories:
   <div class="class-md-12">
     <ul class="nav nav-tabs" role="tablist">
       {% for category in page.hp_categories %}
-      <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#pane-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
+      <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
       {% endfor %}
-      <li role="presentation"><a href="#pane-gallery" aria-controls="home" role="tab" data-toggle="tab">Gallery</a></li>
+      <li role="presentation"><a href="#tab-gallery" aria-controls="home" role="tab" data-toggle="tab">Gallery</a></li>
     </ul>
     <div class="tab-content">
       {% for category in page.hp_categories %}
-      <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="pane-{{ category }}">
+      <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="tab-{{ category }}">
         <p>This is the most recent post from
           <span class="label label-primary">{{ category | capitalize }}</span>. To view all posts, <a href="/{{ category }}.html">click here</a>.
         </p>
@@ -36,7 +36,7 @@ hp_categories:
             {{ post.content }}
       </div>
       {% endfor %}
-      <div role="tabpanel" class="tab-pane" id="pane-gallery">
+      <div role="tabpanel" class="tab-pane" id="tab-gallery">
         <div id="gallery" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
