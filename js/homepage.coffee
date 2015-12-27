@@ -15,7 +15,8 @@ $ ->
     user_id: '137169348@N03',
     photoset_id: '72157662772567116',
     format: 'json',
-    nojsoncallback: '1'
+    nojsoncallback: '1',
+    extras: 'description,tags,url_o'
     },
     (d) ->
       $('#gallery .carousel-indicators').empty()
@@ -33,5 +34,5 @@ $ ->
             }),
             $('<div/>', {
               'class': 'carousel-caption'
-              'text': ''
+              'text': p.description._content
               }))
