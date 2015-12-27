@@ -28,7 +28,7 @@ $ ->
         $('#gallery .carousel-inner').append $('<div/>', {
           'class': if !i then 'item active' else 'item'
           }).append($('<img/>', {
-            src: 'https://farm' + p.farm + '.staticflickr.com/' + p.server + '/'  + p.id + '_'  + p.secret + '_k.jpg',
+            src: 'https://farm' + p.farm + '.staticflickr.com/' + p.server + '/'  + p.id + '_'  + p.secret + '_b.jpg',
             alt: p.title
             }),
             $('<div/>', {
