@@ -16,7 +16,8 @@ $ ->
     photoset_id: '72157662772567116',
     format: 'json',
     nojsoncallback: '1',
-    extras: 'description,tags,url_o'
+    extras: 'description',
+    media: 'photos'
     },
     (d) ->
       $('#gallery .carousel-indicators').empty()
