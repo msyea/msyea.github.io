@@ -36,5 +36,5 @@ $ ->
             }),
             $('<div/>', {
               'class': 'carousel-caption'
-              'html': '<h3>' + p.title + '</h3><p>' + p.description._content + '</p>'
+              'html': '<h3><a href="https://www.flickr.com/photos/137169348@N03/'  + p.id + '/in/album-72157662772567116">' + p.title + '</a></h3><p>' + p.description._content + '</p>'
               }))
