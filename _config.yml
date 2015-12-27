@@ -9,7 +9,6 @@ gems:
   - jekyll-sitemap
 
 collections:
-  - gallery
   - links
 
 defaults:
