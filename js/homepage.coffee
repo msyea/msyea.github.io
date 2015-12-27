@@ -16,5 +16,22 @@ $ ->
     photoset_id: '72157662772567116',
     format: 'json',
     nojsoncallback: '1'
-    }, (d) ->
-    console.log d
+    },
+    (d) ->
+      d.photoset.photo.forEach (p, i) ->
+        $('#gallery .carousel-indicators').empty()
+        $('#gallery .carousel-indicators').append $('<li/>', {
+          'data-target': '#gallery',
+          'data-slide-to': i
+          })
+        $('#gallery .carousel-inner').empty()
+        $('#gallery .carousel-inner').append $('<div/>', {
+          'class': 'item' + i
+          }).append($('<img/>', {
+            src: 'https://farm' + p.farm + '.staticflickr.com/' + p.server + '/'  + p.id + '_'  + p.secret + '.jpg',
+            alt: p.title
+            }),
+            $('<div/>', {
+              'class': 'carousel-caption'
+              'text': ''
+              }))
