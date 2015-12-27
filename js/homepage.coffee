@@ -18,13 +18,13 @@ $ ->
     nojsoncallback: '1'
     },
     (d) ->
+      $('#gallery .carousel-indicators').empty()
+      $('#gallery .carousel-inner').empty()
       d.photoset.photo.forEach (p, i) ->
-        $('#gallery .carousel-indicators').empty()
         $('#gallery .carousel-indicators').append $('<li/>', {
           'data-target': '#gallery',
           'data-slide-to': i
           })
-        $('#gallery .carousel-inner').empty()
         $('#gallery .carousel-inner').append $('<div/>', {
           'class': 'item' + i
           }).append($('<img/>', {
