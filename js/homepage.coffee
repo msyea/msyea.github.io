@@ -34,5 +34,5 @@ $ ->
             }),
             $('<div/>', {
               'class': 'carousel-caption'
-              'text': p.description._content
+              'html': '<h3>' + p.title + '</h3><p>' + p.description._content + '</p>'
               }))
