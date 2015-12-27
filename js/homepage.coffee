@@ -26,7 +26,7 @@ $ ->
           'data-slide-to': i
           })
         $('#gallery .carousel-inner').append $('<div/>', {
-          'class': 'item'
+          'class': 'item' + (!i ? ' active' : '')
           }).append($('<img/>', {
             src: 'https://farm' + p.farm + '.staticflickr.com/' + p.server + '/'  + p.id + '_'  + p.secret + '.jpg',
             alt: p.title
