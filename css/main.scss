@@ -45,8 +45,13 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
   font-size: 65%;
 }
 
-#gallery .carousel-inner .item img {
-  margin: 0 auto;
+#gallery .carousel-inner .item {
+  a {
+    color: white;
+  }
+  img {
+    margin: 0 auto;
+  }
 }
 
 footer {
