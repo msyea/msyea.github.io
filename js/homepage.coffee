@@ -25,7 +25,8 @@ $ ->
       d.photoset.photo.forEach (p, i) ->
         $('#gallery .carousel-indicators').append $('<li/>', {
           'data-target': '#gallery',
-          'data-slide-to': i
+          'data-slide-to': i,
+          'class': if !i then 'active' else ''
           })
         $('#gallery .carousel-inner').append $('<div/>', {
           'class': if !i then 'item active' else 'item'
