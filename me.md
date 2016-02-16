@@ -11,8 +11,8 @@ title: About Me - Simon Mayes
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 </div>
 <div class="col-md-3">
-<a href="http://stackoverflow.com/users/143589/simon">
-<img src="http://stackoverflow.com/users/flair/143589.png" width="208" height="58" alt="profile for Simon at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Simon at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+<a href="//stackoverflow.com/users/143589/simon">
+<img src="//stackoverflow.com/users/flair/143589.png" width="208" height="58" alt="profile for Simon at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Simon at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
 </a>
 </div>
 </div>
