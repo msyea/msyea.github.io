@@ -22,7 +22,7 @@
           <p>{% for category in page.categories %}
             <span class="label label-primary">{{ category }}</span> {% endfor %}{% for tag in page.tags %}
             <span class="label label-info">{{ tag }}</span> {% endfor %}
-            <span class="label label-default">{{ page.date }}</span>
+            <span class="label label-default">{{ page.date | date_to_long_string }}</span>
           </p>
         </div>
       </div>
