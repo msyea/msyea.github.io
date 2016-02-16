@@ -37,7 +37,7 @@ Trouvs were a MayesKennedy client. I joined the team for a year as **Business An
 ### [Intendance (now Treat Digital)](http://treatdigital.com) *2009 - 2011*
 I cut my teeth at Intendance. I originally started as a **Junior Developer** working with PHP and MySQL but quickly
 became **Technical Analyst and Lead Developer**. Increasingly I had a more strategic role setting out development
-practices and the technology stack. During my last year I was joined the board and became **Head of Technical**.
+practices and the technology stack. During my last year I joined the board and became **Head of Technical**.
 
 ## Education
 
