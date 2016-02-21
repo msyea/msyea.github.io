@@ -20,21 +20,18 @@
   margin-top: 0;
 }
 
-/*AM22 - To make google search box appear correct - START*/
-input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
-{
-  box-sizing: content-box;
-  line-height: normal;
+/* Option 2B: Reset an entire region with a custom Less mixin */
+.reset-box-sizing {
+  &,
+  *,
+  *:before,
+  *:after {
+    .box-sizing(content-box);
+  }
 }
-/*AM22 - To make google search box appear correct - END*/
-
-/*AM22 - To make google search results tabs appear correct - START*/
-.gsc-tabsArea div
-{
-  /*By default, Google custom search CSS sets it as AUTO, which shows scroll bars*/
-  overflow: visible;
+.gsc-control-cse {
+  .reset-box-sizing();
 }
-/*AM22 - To make google search results tabs appear correct - END*/
 
 #gallery .carousel-inner .item {
   a {
