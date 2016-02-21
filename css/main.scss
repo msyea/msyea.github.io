@@ -20,10 +20,29 @@
   margin-top: 0;
 }
 
-.gsc-control-cse, .gsc-control-cse *
+/*AM22 - To make google search box appear correct - START*/
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
 {
   box-sizing: content-box;
   line-height: normal;
+}
+/*AM22 - To make google search box appear correct - END*/
+
+/*AM22 - To make google search results tabs appear correct - START*/
+.gsc-tabsArea div
+{
+  /*By default, Google custom search CSS sets it as AUTO, which shows scroll bars*/
+  overflow: visible;
+}
+/*AM22 - To make google search results tabs appear correct - END*/
+
+#gallery .carousel-inner .item {
+  a {
+    color: white;
+  }
+  img {
+    margin: 0 auto;
+  }
 }
 
 footer {
