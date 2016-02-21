@@ -10,7 +10,7 @@ title: Links
       <p>{% for category in link.categories %}
         <span class="label label-primary">{{ category }}</span> {% endfor %}{% for tag in link.tags %}
         <span class="label label-info">{{ tag }}</span> {% endfor %}
-        <span class="label label-default">{{ link.date }}</span><!-- should include "| date_to_long_string" -->
+        <span class="label label-default">{{ link.date | date_to_long_string }}</span><!-- should include "| date_to_long_string" -->
       </p>
     </div>
   </li>
