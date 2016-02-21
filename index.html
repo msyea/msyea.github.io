@@ -1,9 +1,6 @@
 ---
 layout: naked
 title: Home
-hp_categories:
-  - climbing
-  - technology
 ---
 <div class="row">
   <div class="col-md-12 page-header">
@@ -14,13 +11,13 @@ hp_categories:
 <div class="row">
   <div class="class-md-12">
     <ul class="nav nav-tabs" role="tablist">
-      {% for category in page.hp_categories %}
+      {% for category in site.my_categories %}
       <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
       {% endfor %}
       <li role="presentation"><a href="#tab-gallery" aria-controls="home" role="tab" data-toggle="tab">Gallery</a></li>
     </ul>
     <div class="tab-content">
-      {% for category in page.hp_categories %}
+      {% for category in site.my_categories %}
       <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="tab-{{ category }}">
         <p>This is the most recent post from
           <span class="label label-primary">{{ category | capitalize }}</span>. To view all posts, <a href="/{{ category }}.html">click here</a>.

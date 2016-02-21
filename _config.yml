@@ -21,3 +21,8 @@ defaults:
 sass:
   sass_dir: css/_sass
   style: :compressed
+
+
+my_categories:
+  - climbing
+  - technology

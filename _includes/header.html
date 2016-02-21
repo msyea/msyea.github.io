@@ -14,8 +14,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="site-nav">
         <ul class="nav navbar-nav">
-          <li{% if page.categories contains 'climbing' or page.name == 'climbing.html' %} class="active"{% endif %}><a href="/climbing.html">Climbing</a></li>
-          <li{% if page.categories contains 'technology' or page.name == 'technology.html' %} class="active"{% endif %}><a href="/technology.html">Technology</a></li>
+          {% for category in site.my_categories %}
+          {% capture page_uri %}{{ category }}.html{% endcapture %}
+          <li{% if page.categories contains category or page.name == page_uri %} class="active"{% endif %}><a href="/{{ page_uri }}">{{ category | capitalize }}</a></li>
+          {% endfor %}
           <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %}><a href="/links.html">Links</a></li>
           <!-- li><a href="/me.html">About</a></li -->
         </ul>
