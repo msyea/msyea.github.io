@@ -10,7 +10,7 @@
   <body>
     {% include header.html %}
     <div id="main-container" class="container">
-    {% if page.categories %}
+      {% if page.categories %}
       <ol class="breadcrumb">
         {% for category in page.categories %}<li><a href="/{{ category }}.html">{{ category }}</a></li>{% endfor %}
         <li class="active">{{ page.title }}</li>
@@ -22,7 +22,7 @@
           <p>{% for category in page.categories %}
             <span class="label label-primary">{{ category }}</span> {% endfor %}{% for tag in page.tags %}
             <span class="label label-info">{{ tag }}</span> {% endfor %}
-            <span class="label label-default">{{ page.date }}</span>
+            {% if page.date %}<span class="label label-default">{{ page.date | date_to_long_string }}</span>{% endif %}
           </p>
         </div>
       </div>
