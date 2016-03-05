@@ -19,10 +19,9 @@
       <div class="row">
         <div class="col-md-12 page-header">
           <h1>{{ page.title }}</h1>
-          <p>{% for category in page.categories %}
-            <span class="label label-primary">{{ category }}</span> {% endfor %}{% for tag in page.tags %}
-            <span class="label label-info">{{ tag }}</span> {% endfor %}
-            {% if page.date %}<span class="label label-default">{{ page.date | date_to_long_string }}</span>{% endif %}
+          <p>{% if page.date %}<span class="label label-default">{{ page.date | date_to_long_string }}</span>{% endif %}
+            {% for category in page.categories %}<span class="label label-primary">{{ category }}</span> {% endfor %}
+            {% for tag in page.tags %}<span class="label label-info">{{ tag }}</span> {% endfor %}
           </p>
         </div>
       </div>
