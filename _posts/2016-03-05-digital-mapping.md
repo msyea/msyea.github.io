@@ -74,7 +74,7 @@ and filled it with water that evening I came back and was impressed to see no le
 Only time will tell for how long the print lasts for but the "paper" is pretty robust.
 
 {:.text-center}
-[![Toughprint origami bowel](https://farm2.staticflickr.com/1706/25530996125_7e8304109e_z.jpg)](https://www.flickr.com/photos/msyea/25530996125){:.img-thumbnail}
+[![Toughprint origami bowel](https://farm2.staticflickr.com/1706/25530996125_7e8304109e_z.jpg){:.img-thumbnail}](https://www.flickr.com/photos/msyea/25530996125)
 
 I think RouteMapper and Toughprint is a good combo. I will take the product on the hill
 soon and report on how it works. I'm currently pretty impressed.
