@@ -1,7 +1,7 @@
 ---
 title: OS mars map
 category: climbing
-tags: [map,os]
+tags: [maps,os]
 ---
 I've just stumbled across this little gem. When the cartographers aren't playing with
 their spatial data and apps they map other planets!
