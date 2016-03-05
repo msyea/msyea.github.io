@@ -21,16 +21,16 @@
 }
 
 /* Option 2B: Reset an entire region with a custom Less mixin */
-.reset-box-sizing {
+@mixin reset-box-sizing {
   &,
   *,
   *:before,
   *:after {
-    .box-sizing(content-box);
+    @include box-sizing(content-box);
   }
 }
 .gsc-control-cse {
-  .reset-box-sizing();
+  @include reset-box-sizing();
 }
 
 #gallery .carousel-inner .item {
