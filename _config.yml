@@ -27,5 +27,6 @@ my_categories:
   - climbing
   - technology
 
-description: Because it's there. The personal blog and website of Simon Mayes. Climber and Software Engineer.
 name: Because it's there
+description: Because it's there. The personal blog and website of Simon Mayes. Climber and Software Engineer.
+keywords: Simon Mayes, Climber, Software Engineer, msyea

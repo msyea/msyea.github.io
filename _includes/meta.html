@@ -3,8 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="f0tQb0nOlYL5eC5g7zZbNsQfzX8ukp-nDvW43tvcSdw" />
 <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip }}{% else %}{{ site.description }}{% endif %}">
+<!-- meta name="keywords" content="{% if page.category %}{{ page.category }}, {% endif %}{% for tag in page.tags %}{{ tag }}, {% endfor %}{{ site.keywords}}" -->
 <meta property="og:title" content="{{ page.title }}" />
 <meta property="og:type" content="website" />
+{% if page.image %}<meta property="og:image" content="{{ page.image }}" />{% endif %}
 <meta property="og:url" content="{{ site.github.url }}{{ page.url }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:locale" content="en_GB" />
@@ -19,5 +21,4 @@
 <meta name="twitter:site" content="@msyea" />
 <meta name="twitter:title" content="{{ page.title }}" />
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip }}{% else %}{{ site.description }}{% endif %}" />
-{% if page.image %}<meta property="og:image" content="{{ page.image }}" />
-<meta name="twitter:description" content="{{ page.image }}" />{% endif %}
+{% if page.image %}<meta name="twitter:description" content="{{ page.image }}" />{% endif %}
