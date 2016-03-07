@@ -3,14 +3,14 @@ layout: naked
 title: Climbing
 ---
 {% for post in site.categories["climbing"] %}
-  <div class="media climbing">
+  <div class="media climbing" itemid="{{ post.id }}" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="media-body">
-      <h2 class="media-heading"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p><span class="label label-default">{{ post.date | date_to_long_string }}</span>
-        {% for category in post.categories %}<span class="label label-primary">{{ category }}</span> {% endfor %}
-        {% for tag in post.tags %}<span class="label label-info">{{ tag }}</span> {% endfor %}
+      <h2 class="media-heading" itemprop="headline"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
+      <p><time class="label label-default" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
+        {% for category in post.categories %}<span class="label label-primary" itemprop="keywords">{{ category }}</span> {% endfor %}
+        {% for tag in post.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
       </p>
-      {{post.excerpt}}
+      <div itemprop="description">{{ post.excerpt }}</div>
     </div>
   </div>
 {% endfor %}
