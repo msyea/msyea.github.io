@@ -18,19 +18,21 @@ title: Home
     </ul>
     <div class="tab-content">
       {% for category in site.my_categories %}
+      {% assign current = site.categories[category][0]  %}
+      {% assign previous = site.categories[category][1]  %}
       <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="tab-{{ category }}">
         <p>This is the most recent post from
-          <span class="label label-primary">{{ category | capitalize }}</span>. To view all posts, <a href="/{{ category }}.html">click here</a>.
+          <a class="label label-primary" href="/{{ category }}.html">{{ category }}</a>.
+          Previous post: <a href="{{ previous.url }}">{{ previous.title }}</a>.
         </p>
-            {% assign post = site.categories[category] | first %}
-          <div itemid="{{ post.id }}" itemscope itemtype="http://schema.org/BlogPosting" sameAs="{{ post.url }}">
-            <h2 itemprop="headline"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-            <p><time class="label label-default" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
-              {% for category in post.categories %}<span class="label label-primary" itemprop="keywords">{{ category }}</span> {% endfor %}
-              {% for tag in post.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
+          <div itemid="{{ current.id }}" itemscope itemtype="http://schema.org/BlogPosting" sameAs="{{ current.url }}">
+            <h2 itemprop="headline"><a href="{{ current.url }}" itemprop="url">{{ current.title }}</a></h2>
+            <p><time class="label label-default" itemprop="datePublished" datetime="{{ current.date | date_to_xmlschema }}">{{ current.date | date_to_long_string }}</time>
+              {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html" itemprop="keywords">{{ category }}</a> {% endfor %}
+              {% for tag in current.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
             </p>
             <div itemprop="articleBody">
-              {{ post.content }}
+              {{ current.content }}
             </div>
           </div>
       </div>
