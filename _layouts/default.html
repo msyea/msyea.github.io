@@ -6,6 +6,7 @@
     <title>{{ page.title }} - Because it's there</title>
     {% include css.html %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     {% include header.html %}
@@ -29,9 +30,9 @@
       <div class="row">
         <div class="col-md-12 page-header">
           <h1 itemprop="name">{{ page.title }}</h1>
-          <p>{% if page.date %}<time class="label label-default" datetime="{{ page.date | date_to_xmlschema}}">{{ page.date | date_to_long_string }}</time>{% endif %}
-            {% for category in page.categories %}<span class="label label-primary">{{ category }}</span> {% endfor %}
-            {% for tag in page.tags %}<span class="label label-info">{{ tag }}</span> {% endfor %}
+          <p>{% if page.date %}<time class="label label-default" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema}}">{{ page.date | date_to_long_string }}</time>{% endif %}
+            {% for category in page.categories %}<span class="label label-primary" itemprop="keywords">{{ category }}</span> {% endfor %}
+            {% for tag in page.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
           </p>
         </div>
       </div>
