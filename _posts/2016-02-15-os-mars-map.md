@@ -2,6 +2,7 @@
 title: OS mars map
 category: climbing
 tags: [maps,os]
+image: https://farm2.staticflickr.com/1598/25012985956_816c7d1d70_b.jpg
 ---
 I've just stumbled across this little gem. When the cartographers aren't playing with
 their spatial data and apps they map other planets!

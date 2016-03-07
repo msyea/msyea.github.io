@@ -2,6 +2,7 @@
 title: Digital Mapping
 category: climbing
 tags: [maps,harvey-maps]
+image: {{ site.github.url }}/img/routebuddy-banner.png
 ---
 I've finally made the move to digital and custom mapping. Let's see how it works out!
 I was about to buy some new [Harvey Maps](http://www.harveymaps.co.uk) Mountain Maps and I noticed
@@ -44,7 +45,7 @@ You also cannot sort locations into folders. A minor qualm and something they ca
 easily fix.
 
  {:.text-center}
-![RouteBuddy](/img/routebuddy-banner.png){:.img-thumbnail}
+![RouteBuddy]({{ site.github.url }}/img/routebuddy-banner.png){:.img-thumbnail}
 
 ## Atlas
 Now to Atlas. I have it running on my iPhone 6s and iPad mini and it works really well.

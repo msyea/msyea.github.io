@@ -5,11 +5,12 @@
 <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip }}{% else %}{{ site.description }}{% endif %}">
 <!-- meta name="keywords" content="{% if page.category %}{{ page.category }}, {% endif %}{% for tag in page.tags %}{{ tag }}, {% endfor %}{{ site.keywords}}" -->
 <meta property="og:title" content="{{ page.title }}" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="{% if page.id %}article{% else %}website{% endif %}" />
 {% if page.image %}<meta property="og:image" content="{{ page.image }}" />{% endif %}
 <meta property="og:url" content="{{ site.github.url }}{{ page.url }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:locale" content="en_GB" />
+{% if page.id %}
 {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />{% endif %}
 <meta property="article:author:first_name" content="Simon" />
 <meta property="article:author:last_name" content="Mayes" />
@@ -18,6 +19,7 @@
 {% if page.category %}<meta property="article:section" content="{{ page.category }}" />{% endif %}
 {% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}" />
 {% endfor %}
+{% endif %}
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@msyea" />
 <meta name="twitter:title" content="{{ page.title }}" />
