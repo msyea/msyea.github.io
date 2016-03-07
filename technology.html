@@ -2,6 +2,18 @@
 layout: naked
 title: Technology
 ---
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <h1>Technology <small>and other such noise</small></h1>
+    </div>
+    <p>I'm a software engineering by trade, specialising in node.js and backend technology. That will be my focus
+      but I also run the business, so I might post some business chat too.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Latest blog posts</h2>
 {% for post in site.categories["technology"] %}
   <div class="media technology" itemid="{{ post.id }}" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="media-body">
@@ -14,3 +26,5 @@ title: Technology
     </div>
   </div>
 {% endfor %}
+  </div>
+</div>
