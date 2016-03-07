@@ -20,7 +20,7 @@ title: Links
     <div class="media-body">
       <h4 class="media-heading"><a href="{{ link.link }}">{{ link.title }}</a></h4>
       <p><span class="label label-default">{{ link.date | date_to_long_string }}</span>
-        {% for category in link.categories %}<span class="label label-primary">{{ category }}</span> {% endfor %}
+        {% for category in link.categories %}<a class="label label-primary" href="/{{ category }}.html">{{ category }}</a> {% endfor %}
         {% for tag in link.tags %}<span class="label label-info">{{ tag }}</span> {% endfor %}
       </p>
     </div>
