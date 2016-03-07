@@ -1,27 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>{{ page.title }} - Because it's there</title>
+    <title>{{ page.title }} - {{ site.name }}</title>
+    {% include meta.html %}
     {% include css.html %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
-
-    <meta property="og:title" content="The Rock" />
-    <meta property="og:type" content="video.movie" />
-    <meta property="og:url" content="{{ site.github.url }}" />
-    <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@msyea" />
-    <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}" />
-
-    {% if page.image %}
-    <meta property="og:image" content="{{ page.image }}" />
-    <meta name="twitter:description" content="{{ page.image }}" />
-    {% endif %}
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     {% include header.html %}
@@ -45,7 +27,7 @@
       <div class="row">
         <div class="col-md-12 page-header">
           <h1 itemprop="name">{{ page.title }}</h1>
-          <p>{% if page.date %}<time class="label label-default" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema}}">{{ page.date | date_to_long_string }}</time>{% endif %}
+          <p>{% if page.date %}<time class="label label-default" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>{% endif %}
             {% for category in page.categories %}<span class="label label-primary" itemprop="keywords">{{ category }}</span> {% endfor %}
             {% for tag in page.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
           </p>
