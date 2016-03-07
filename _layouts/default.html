@@ -7,18 +7,28 @@
     {% include css.html %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
+  <body itemscope itemtype="http://schema.org/WebPage">
     {% include header.html %}
     <div id="main-container" class="container">
       {% if page.categories %}
-      <ol class="breadcrumb">
-        {% for category in page.categories %}<li><a href="/{{ category }}.html">{{ category }}</a></li>{% endfor %}
-        <li class="active">{{ page.title }}</li>
+      <ol class="breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+        {% assign breadcrumbs = 1 %}
+        {% for category in page.categories %}
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="/{{ category }}.html" itemprop="item"><span itemprop="name">{{ category }}</span></a>
+          <meta itemprop="position" content="{{ breadcrumbs }}" />
+        </li>
+        {% assign breadcrumbs = breadcrumbs | plus: 1 %}
+        {% endfor %}
+        <li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <span itemprop="item"><span itemprop="name">{{ page.title }}</span></span>
+          <meta itemprop="position" content="{{ breadcrumbs }}" />
+        </li>
       </ol>
       {% endif %}
       <div class="row">
         <div class="col-md-12 page-header">
-          <h1>{{ page.title }}</h1>
+          <h1 itemprop="name">{{ page.title }}</h1>
           <p>{% if page.date %}<time class="label label-default" datetime="{{ page.date | date_to_xmlschema}}">{{ page.date | date_to_long_string }}</time>{% endif %}
             {% for category in page.categories %}<span class="label label-primary">{{ category }}</span> {% endfor %}
             {% for tag in page.tags %}<span class="label label-info">{{ tag }}</span> {% endfor %}
