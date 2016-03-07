@@ -2,7 +2,7 @@
 title: Digital Mapping
 category: climbing
 tags: [maps,harvey-maps]
-image: {{ site.github.url }}/img/routebuddy-banner.png
+image: http://msyea.uk/img/routebuddy-banner.png
 ---
 I've finally made the move to digital and custom mapping. Let's see how it works out!
 I was about to buy some new [Harvey Maps](http://www.harveymaps.co.uk) Mountain Maps and I noticed
