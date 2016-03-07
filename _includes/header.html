@@ -1,24 +1,24 @@
-<header>
+<header itemscope itemtype="http://schema.org/WPHeader">
   <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
-      <div class="navbar-header">
+      <div class="navbar-header" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Because it's there</a>
+        <a class="navbar-brand" href="/" itemprop="url"><span itemprop="name">Because it's there</span></a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="site-nav">
         <ul class="nav navbar-nav">
           {% for category in site.my_categories %}
           {% capture page_uri %}{{ category }}.html{% endcapture %}
-          <li{% if page.categories contains category or page.name == page_uri %} class="active"{% endif %}><a href="/{{ page_uri }}">{{ category | capitalize }}</a></li>
+          <li{% if page.categories contains category or page.name == page_uri %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/{{ page_uri }}" itemprop="url"><span itemprop="name">{{ category | capitalize }}</span></a></li>
           {% endfor %}
-          <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %}><a href="/links.html">Links</a></li>
+          <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/links.html" itemprop="url"><span itemprop="name">Links</span></a></li>
           <!-- li><a href="/me.html">About</a></li -->
         </ul>
         <form id="search" class="navbar-form navbar-right" role="search" action="/search.html">
