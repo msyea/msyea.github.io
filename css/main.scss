@@ -45,3 +45,13 @@
 footer {
   margin-top: 1em;
 }
+
+
+// Usage
+a.link-hidden {
+  color: $text-color;
+
+  &:hover {
+    color: $text-color;
+  }
+}
