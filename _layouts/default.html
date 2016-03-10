@@ -24,16 +24,23 @@
         </li>
       </ol>
       {% endif %}
-      <div class="row">
+      <div class="row"{% if page.id %} itemid="{{ site.github.url }}{{ page.url }}" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"{% endif %}>
         <div class="col-md-12 page-header">
           <h1 itemprop="name">{{ page.title }}</h1>
-          <p>{% if page.date %}<time class="label label-default" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>{% endif %}
+          <meta itemprop="headline" content="{{ current.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
+          {% if current.image %}<img class="hidden" itemprop="image" src="{{ current.image }}" alt="{{ current.title }}" />{% endif %}
+          <p>{% if page.date %}<time class="label label-default" itemprop="datePublished dateModified" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>{% endif %}
             {% for category in page.categories %}<span class="label label-primary" itemprop="keywords">{{ category }}</span> {% endfor %}
             {% for tag in page.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
           </p>
         </div>
       </div>
-      {{ content }}
+      <div itemprop="articleBody">
+        {{ content }}
+      </div>
+      <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Simon Mayes" />
+      </div>
     </div>
     {% include footer.html %}
     {% include scripts.html %}
