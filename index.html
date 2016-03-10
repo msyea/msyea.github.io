@@ -28,6 +28,7 @@ title: Home
           <div itemid="{{ current.id }}" itemscope itemtype="http://schema.org/BlogPosting" sameAs="{{ current.url }}">
             <h2 itemprop="name"><a href="{{ current.url }}" itemprop="url mainEntityOfPage">{{ current.title }}</a></h2>
             <meta itemprop="headline" content="{{ current.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
+            {% if current.image %}<meta name="image" content="{{ current.image }}" />{% endif %}
             <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ current.date | date_to_xmlschema }}">{{ current.date | date_to_long_string }}</time>
               {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html" itemprop="keywords">{{ category }}</a> {% endfor %}
               {% for tag in current.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
