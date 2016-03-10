@@ -37,12 +37,9 @@ title: Home
             <div itemprop="articleBody">
               {{ current.content }}
             </div>
-            <meta itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
               <meta itemprop="name" content="Simon Mayes" />
-            </meta>
-            <meta itemprop="publisher" itemscope itemtype="http://schema.org/Person">
-              <meta itemprop="name" content="Simon Mayes" />
-            </meta>
+            </div>
           </div>
       </div>
       {% endfor %}
