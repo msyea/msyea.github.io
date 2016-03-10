@@ -5,7 +5,7 @@
     {% include meta.html %}
     {% include css.html %}
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage">
+  <body itemscope itemtype="{% if page.id %}http://schema.org/Blog{% elsif %}http://schema.org/WebPage{% endif %}">
     {% include header.html %}
     <div id="main-container" class="container">
       {% if page.categories %}
@@ -24,7 +24,7 @@
         </li>
       </ol>
       {% endif %}
-      <div{% if page.id %} itemid="{{ site.github.url }}{{ page.url }}" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting"{% endif %}>
+      <div itemid="{{ site.github.url }}{{ page.url }}" {% if page.id %}itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"{% elsif %}itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement"{% endif %}>
         <div class="row">
           <div class="col-md-12 page-header">
             <h1 itemprop="name">{{ page.title }}</h1>
@@ -39,12 +39,16 @@
             </p>
           </div>
         </div>
+        {% if page.id %}
         <div itemprop="articleBody">
           {{ content }}
         </div>
         <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
           <meta itemprop="name" content="Simon Mayes" />
         </div>
+        {% elsif %}
+          {{ content }}
+        {% endif %}
       </div>
     </div>
     {% include footer.html %}
