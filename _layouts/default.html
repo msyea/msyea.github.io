@@ -28,6 +28,7 @@
         <div class="row">
           <div class="col-md-12 page-header">
             <h1 itemprop="name">{{ page.title }}</h1>
+            <meta itemprop="mainEntityOfPage" content="{{ site.github.url }}{{ page.url }}" />
             <meta itemprop="headline" content="{{ page.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
             {% if page.image %}<img class="hidden" itemprop="image" src="{{ page.image }}" alt="{{ page.title }}" />{% endif %}
             <p>{% if page.date %}<time class="label label-default" itemprop="datePublished dateModified" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>{% endif %}
