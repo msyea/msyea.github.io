@@ -32,7 +32,7 @@ title: Home
               <img itemprop="url" src="{{ page.image }}" alt="{{ page.title }}" />
             </div>{% endif %}
             <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ current.date | date_to_xmlschema }}">{{ current.date | date_to_long_string }}</time>
-              {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html" itemprop="keywords">{{ category }}</a> {% endfor %}
+              {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
               {% for tag in current.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
             </p>
             <div itemprop="articleBody">
