@@ -4,7 +4,7 @@
 <meta name="google-site-verification" content="f0tQb0nOlYL5eC5g7zZbNsQfzX8ukp-nDvW43tvcSdw" />
 {% capture description %}{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 <meta name="description" content="{{ description }}">
-<!-- meta name="keywords" content="{% if page.category %}{{ page.category }}, {% endif %}{% for tag in page.tags %}{{ tag }}, {% endfor %}{{ site.keywords}}" -->
+<meta name="keywords" content="{% if page.category %}{{ page.category }}, {% endif %}{% for tag in page.tags %}{{ tag }}, {% endfor %}{{ site.keywords}}">
 {% if false %}
 <meta property="og:title" content="Simon Mayes" />
 <meta property="og:type" content="profile" />
