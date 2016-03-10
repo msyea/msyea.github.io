@@ -27,7 +27,7 @@ title: Climbing
         {% for category in post.categories %}<a class="label label-primary" href="/{{ category }}.html" itemprop="keywords">{{ category }}</a> {% endfor %}
         {% for tag in post.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
       </p>
-      <meta itemprop="headline" content="{{ current.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
+      <meta itemprop="headline" content="{{ post.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
       <div>{{ post.excerpt }}</div>
       <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="Simon Mayes" />
