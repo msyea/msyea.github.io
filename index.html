@@ -3,9 +3,9 @@ layout: naked
 title: Home
 ---
 <div class="row" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <meta itemprop="name" content="{{ site.name }}" />
   <div class="col-md-12 page-header">
-    <h1>Simon Mayes<small> - Climber and Software Engineer</small>
-    </h1>
+    <h1 itemprop="keywords">Simon Mayes<small> - Climber and Software Engineer</small></h1>
   </div>
 </div>
 <div class="row">
@@ -25,7 +25,7 @@ title: Home
           <a class="label label-primary" href="/{{ category }}.html">{{ category }}</a>.
           Previous post: <a href="{{ previous.url }}">{{ previous.title }}</a>.
         </p>
-          <div itemid="{{ site.github.url }}{{ current.url }}" itemscope itemtype="http://schema.org/BlogPosting">
+          <div itemprop="blogPost" itemid="{{ site.github.url }}{{ current.url }}" itemscope itemtype="http://schema.org/BlogPosting">
             <h2 itemprop="name"><a href="{{ site.github.url }}{{ current.url }}" itemprop="url mainEntityOfPage">{{ current.title }}</a></h2>
             <meta itemprop="headline" content="{{ current.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
             {% if current.image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
