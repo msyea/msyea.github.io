@@ -25,11 +25,11 @@ title: Home
           <a class="label label-primary" href="/{{ category }}.html">{{ category }}</a>.
           Previous post: <a href="{{ previous.url }}">{{ previous.title }}</a>.
         </p>
-          <div itemid="{{ site.github.url }}{{ page.url }}" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 itemprop="name"><a href="{{ site.github.url }}{{ page.url }}" itemprop="url mainEntityOfPage">{{ current.title }}</a></h2>
+          <div itemid="{{ site.github.url }}{{ current.url }}" itemscope itemtype="http://schema.org/BlogPosting">
+            <h2 itemprop="name"><a href="{{ site.github.url }}{{ current.url }}" itemprop="url mainEntityOfPage">{{ current.title }}</a></h2>
             <meta itemprop="headline" content="{{ current.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
-            {% if page.image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-              <img itemprop="url" src="{{ page.image }}" alt="{{ page.title }}" />
+            {% if current.image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+              <img itemprop="url" src="{{ current.image }}" alt="{{ current.title }}" />
             </div>{% endif %}
             <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ current.date | date_to_xmlschema }}">{{ current.date | date_to_long_string }}</time>
               {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
