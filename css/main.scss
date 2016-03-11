@@ -33,8 +33,30 @@ $black: #2F4F4F; // DarkSlateGray -
     }
   }
 }
+@mixin flash ($size) {
+  width: $size;
+  height: $size/2;
+  background-color: $green;
+  .ring {
+    position: relative;
+    width: ($size/3)*2;
+    height: $size/2;
+    background-color: $maroon;
+    left: $size/6;
+    .centre {
+      position: relative;
+      width: $size/3;
+      height: $size/2;
+      background-color: $blue;
+      left: $size/6;
+    }
+  }
+}
 .roundel {
   @include roundel(150px);
+}
+.flash {
+  @include flash(150px);
 }
 
 .roundel-nav {
