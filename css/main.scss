@@ -33,6 +33,28 @@ $black: #2F4F4F; // DarkSlateGray -
     }
   }
 }
+@mixin flag ($size) {
+  width: $size;
+  height: ($size/3)*2;
+  background-color: $green;
+  .ring {
+    position: relative;
+    width: ($size/3)*2;
+    height: ($size/3)*2;
+    background-color: $maroon;
+    border-radius: $size/3;
+    left: $size/6;
+    .centre {
+      position: relative;
+      width: $size/3;
+      height: $size/3;
+      background-color: $blue;
+      border-radius: $size/6;
+      left: $size/6;
+      top: $size/6;
+    }
+  }
+}
 @mixin flash ($size) {
   width: $size;
   height: $size/2;
@@ -53,9 +75,15 @@ $black: #2F4F4F; // DarkSlateGray -
   }
 }
 .roundel {
+  margin: 5px;
   @include roundel(150px);
 }
+.flag {
+  margin: 5px;
+  @include flag(150px);
+}
 .flash {
+  margin: 5px;
   @include flash(150px);
 }
 
@@ -75,26 +103,66 @@ $black: #2F4F4F; // DarkSlateGray -
   width: 100px;
   height: 50px;
   padding: 5px;
-  .a {
+  a {
     color: white;
+    text-decoration: underline;
   }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.experiment {
+  .bar {
+    float: left;
+    height: 40px;
+    width: 33.3%;
+    padding: 10px;
+  }
+  .contents {
+    clear: both;
+    padding: 10px;
+  }
+  height: 300px;
+  width: 100%;
+  padding: 0 0 0 0;
+  margin: 10px 0;
 }
 
 .cream-background {
   background-color: $cream;
   color: black;
 }
+.cream {
+  color: $cream;
+}
+
 .maroon-background {
   background-color: $maroon;
 }
+.maroon {
+  color: $maroon;
+}
+
 .blue-background {
   background-color: $blue;
 }
+.blue {
+  color: $blue;
+}
+
 .green-background {
   background-color: $green;
 }
+.green {
+  color: $green;
+}
+
 .black-background {
   background-color: $black;
+}
+.black {
+  color: $black;
 }
 
 @media (max-width: 767px) {
