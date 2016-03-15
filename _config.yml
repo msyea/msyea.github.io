@@ -2,6 +2,9 @@ timezone: Europe/London
 
 markdown: kramdown
 
+gems:
+  - jekyll-sitemap
+
 collections:
   - links
 
