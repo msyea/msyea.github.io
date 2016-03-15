@@ -15,9 +15,9 @@ title: Home
   <div class="class-md-12">
     <ul class="nav nav-tabs" role="tablist">
       {% for category in site.my_categories %}
-      <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="home" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
+      <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="tab-{{ category }}" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
       {% endfor %}
-      <li role="presentation"><a href="#tab-gallery" aria-controls="home" role="tab" data-toggle="tab">Gallery</a></li>
+      <li role="presentation"><a href="#tab-gallery" aria-controls="tab-gallery" role="tab" data-toggle="tab">Gallery</a></li>
     </ul>
     <div class="tab-content">
       {% for category in site.my_categories %}
