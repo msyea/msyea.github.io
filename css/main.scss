@@ -218,3 +218,11 @@ a.link-hidden {
     color: $text-color;
   }
 }
+
+#gh-follow {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    width: 115px;
+    height: 20px;
+}
