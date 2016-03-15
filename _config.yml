@@ -3,6 +3,7 @@ timezone: Europe/London
 markdown: kramdown
 
 gems:
+  - jekyll-redirect-from
   - jekyll-sitemap
 
 collections:
