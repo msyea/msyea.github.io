@@ -37,12 +37,12 @@ title: Home
             <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ current.date | date_to_xmlschema }}">{{ current.date | date_to_long_string }}</time>
               {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
               {% for tag in current.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
+              <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
+              by <a itemprop="name" href="{{ site.github.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
+              </span>
             </p>
             <div itemprop="articleBody">
               {{ current.content }}
-            </div>
-            <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
-              <meta itemprop="name" content="Simon Mayes" />
             </div>
           </div>
       </div>
