@@ -6,6 +6,7 @@ gems:
   - jemoji
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-coffeescript
 
 collections:
   - links

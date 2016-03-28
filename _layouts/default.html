@@ -49,6 +49,22 @@
         {% else %}
           {{ content }}
         {% endif %}
+        {% if page.album %}
+        <p class="text-right"><a href="https://www.flickr.com/photos/msyea/albums/{{ page.album }}" title="See my photos on Flickr!"><img src="https://s.yimg.com/pw/images/goodies/black-see-my-photos.png" width="147" height="26" alt=""></a></p>
+        <div id="gallery" class="carousel slide" data-ride="carousel" data-id="{{ page.album }}">
+          <ol class="carousel-indicators"></ol>
+          <div class="carousel-inner" role="listbox"></div>
+
+          <a class="left carousel-control" href="#gallery" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#gallery" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        {% endif %}
       </div>
     </div>
     {% include footer.html %}
