@@ -14,16 +14,39 @@ title: Home
 <div class="row">
   <div class="class-md-12">
     <ul class="nav nav-tabs" role="tablist">
+      {% unless site.my_categories contains site.posts[0].category %}<li role="presentation" class="active"><a href="#tab-no-category" aria-controls="tab-no-category" role="tab" data-toggle="tab">Latest post</a></li>{% endunless %}
       {% for category in site.my_categories %}
-      <li role="presentation" {% if forloop.first %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="tab-{{ category }}" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
+      <li role="presentation" {% if forloop.first and !(site.my_categories contains site.posts[0].category) %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="tab-{{ category }}" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
       {% endfor %}
       <li role="presentation"><a href="#tab-gallery" aria-controls="tab-gallery" role="tab" data-toggle="tab">Gallery</a></li>
     </ul>
     <div class="tab-content">
+      {% unless site.my_categories contains site.posts[0].category %}
+      <div role="tabpanel" class="tab-pane active" id="tab-no-category">
+          <div itemprop="blogPost" itemid="{{ site.github.url }}{{ site.posts[0].url }}" itemscope itemtype="http://schema.org/BlogPosting">
+            <h2 itemprop="name"><a href="{{ site.github.url }}{{ site.posts[0].url }}" itemprop="url mainEntityOfPage">{{ site.posts[0].title }}</a></h2>
+            <meta itemprop="headline" content="{{ site.posts[0].excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
+            {% if site.posts[0].image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+              <img itemprop="url" src="{{ site.posts[0].image }}" alt="{{ site.posts[0].title }}" />
+            </div>{% endif %}
+            <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ site.posts[0].date | date_to_xmlschema }}">{{ site.posts[0].date | date_to_long_string }}</time>
+              {% for category in site.posts[0].categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
+              {% for tag in site.posts[0].tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
+              <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
+              by <a itemprop="name" href="{{ site.github.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
+              </span>
+            </p>
+            <div itemprop="articleBody">
+              {{ site.posts[0].content }}
+            </div>
+          </div>
+      </div>
+      {% endunless %}
+
       {% for category in site.my_categories %}
       {% assign current = site.categories[category][0]  %}
       {% assign previous = site.categories[category][1]  %}
-      <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="tab-{{ category }}">
+      <div role="tabpanel" class="tab-pane{% if forloop.first and !(site.my_categories contains site.posts[0].category) %} active{% endif %}" id="tab-{{ category }}">
         <p>This is the most recent post from
           <a class="label label-primary" href="/{{ category }}.html">{{ category }}</a>.
           Previous post: <a href="{{ previous.url }}">{{ previous.title }}</a>.
