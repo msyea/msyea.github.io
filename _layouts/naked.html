@@ -5,7 +5,7 @@
     {% include meta.html %}
     {% include css.html %}
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage">
+  <body itemscope itemtype="http://schema.org/{% if page.schema %}{{ page.schema }}{% else %}WebPage{% endif %}">
     {% include header.html %}
     <div id="main-container" class="container">
       {{ content }}
