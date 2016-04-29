@@ -42,4 +42,4 @@ We need to leverage this to move faster, avoid EU bureaucracy and make our own t
 
 There are other facts and figures, geopolitical and economic arguments (most supporting remain) but I don't think they really matter.
 I want to continue to work, be friends and trade with our closest european partners and remain "in Europe". However we
-need to "leave the EU" and if we can destroy it.
+need to "leave the EU" and if we can, destroy it.
