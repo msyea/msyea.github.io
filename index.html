@@ -17,7 +17,7 @@ schema: Blog
     <ul class="nav nav-tabs" role="tablist">
       {% unless false and site.my_categories contains site.posts[0].category %}<li role="presentation" class="active"><a href="#tab-no-category" aria-controls="tab-no-category" role="tab" data-toggle="tab">Latest post</a></li>{% endunless %}
       {% for category in site.my_categories %}
-      <li role="presentation" {% if forloop.first and !(site.my_categories contains site.posts[0].category) %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="tab-{{ category }}" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
+      <li role="presentation" {% if false and forloop.first and !(site.my_categories contains site.posts[0].category) %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="tab-{{ category }}" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
       {% endfor %}
       <li role="presentation"><a href="#tab-gallery" aria-controls="tab-gallery" role="tab" data-toggle="tab">Gallery</a></li>
     </ul>
