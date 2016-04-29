@@ -1,5 +1,5 @@
 ---
-title: WhatsApp Web
+title: The Dirtbag Diaries
 link: http://dirtbagdiaries.com
 tags: [climbing]
 ---
