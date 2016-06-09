@@ -17,4 +17,4 @@ deployment:
     commands:
       - bower install
       - jekyll build
-      - aws s3 sync _site/ s3://type2fun.net/ --region eu-west-1
+      - aws s3 sync _site/ s3://type2fun.net/ --region eu-west-1 --delete
