@@ -6,10 +6,15 @@ test:
   override:
     - exit 0
 
+dependencies:
+  pre:
+    - gem install bower
+    - gem install jekyll
+
 deployment:
   aws:
     branch: master
     commands:
-      - bundle exec bower install
-      - bundle exec jekyll build
+      - bower install
+      - jekyll build
       - aws s3 sync _site/ s3://type2fun.net/ --region eu-west-1
