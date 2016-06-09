@@ -11,7 +11,9 @@ gems:
 collections:
   - links
 
-exclude: [vendor]
+exclude:
+  - vendor
+  - bower_components
 
 defaults:
   -
