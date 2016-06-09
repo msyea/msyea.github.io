@@ -11,6 +11,8 @@ gems:
 collections:
   - links
 
+exclude: [vendor]
+
 defaults:
   -
     scope:
