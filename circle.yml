@@ -10,6 +10,6 @@ deployment:
   aws:
     branch: master
     commands:
-      - bower install
-      - jekyll build
+      - bundle exec bower install
+      - bundle exec jekyll build
       - aws s3 sync _site/ s3://type2fun.net/ --region eu-west-1
