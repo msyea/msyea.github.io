@@ -2,6 +2,11 @@ test:
   override:
     - exit 0
 
+dependencies:
+  pre:
+    - gem install bower
+    - gem install jekyll
+
 deployment:
   aws:
     branch: master
