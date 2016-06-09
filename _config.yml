@@ -11,12 +11,7 @@ gems:
 collections:
   - links
 
-exclude:
-  - vendor
-  - bower_components
-  - Gemfile
-  - Gemfile.lock
-  - bower.json
+exclude: [vendor]
 
 defaults:
   -
