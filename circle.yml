@@ -1,3 +1,7 @@
+machine:
+  ruby:
+    version: 2.2.4p230
+
 test:
   override:
     - exit 0
