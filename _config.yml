@@ -16,6 +16,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - CNAME
+  - bower_components
+  - bower.json
+  - circle.yml
 
 defaults:
   -
