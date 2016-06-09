@@ -1,0 +1,10 @@
+test:
+  override:
+    - exit 0
+
+deployment:
+  aws:
+    branch: master
+    commands:
+      - bower install
+      - aws s3 sync _site/ s3://type2fun.net/ --region eu-west-1
