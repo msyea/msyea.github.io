@@ -18,3 +18,4 @@ deployment:
       - bower install
       - jekyll build
       - aws s3 sync _site/ s3://type2fun.net/ --region eu-west-1 --delete
+      - aws cloudfront create-invalidation --distribution-id EMGBV1PDM36JN --paths /
