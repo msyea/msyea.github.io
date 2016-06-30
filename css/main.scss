@@ -2,8 +2,8 @@
 ---
 $cream: #FFF8DC; // Cornsilk -
 $maroon: #800000; // Maroon -
-$blue: #014272; // MidnightBlue -
-$green: #014225; // British Racing Green
+$blue: #004288; // MidnightBlue -
+$green: #004225; // British Racing Green
 $black: #2F4F4F; // DarkSlateGray -
 
 @import "bootstrap";
@@ -225,4 +225,9 @@ a.link-hidden {
     overflow: hidden;
     width: 115px;
     height: 20px;
+}
+
+// need to add responsive for this!
+.home-main {
+  min-height: 400px;
 }
