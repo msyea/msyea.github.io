@@ -13,9 +13,9 @@ title: Posts
     <h2>Latest blog posts</h2>
 {% for post in site.posts %}
   {% unless site.my_categories contains post.category %}
-  <div class="media no-category" itemid="{{ site.github.url }}{{ post.url }}" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="media no-category" itemid="{{ site.url }}{{ post.url }}" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="media-body">
-      <h3 class="media-heading" itemprop="name"><a href="{{ site.github.url }}{{ post.url }}" itemprop="url mainEntityOfPage">{{ post.title }}</a></h3>
+      <h3 class="media-heading" itemprop="name"><a href="{{ site.url }}{{ post.url }}" itemprop="url mainEntityOfPage">{{ post.title }}</a></h3>
       {% if post.image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
         <img itemprop="url" src="{{ post.image }}" alt="{{ post.title }}" />
       </div>{% endif %}
@@ -23,7 +23,7 @@ title: Posts
         {% for category in post.categories %}<a class="label label-primary" href="/{{ category }}.html" itemprop="keywords">{{ category }}</a> {% endfor %}
         {% for tag in post.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
         <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
-        by <a itemprop="name" href="{{ site.github.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
+        by <a itemprop="name" href="{{ site.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
         </span>
       </p>
       <meta itemprop="headline" content="{{ post.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />

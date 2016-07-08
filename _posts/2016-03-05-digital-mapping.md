@@ -45,7 +45,7 @@ You also cannot sort locations into folders. A minor qualm and something they ca
 easily fix.
 
  {:.text-center}
-![RouteBuddy]({{ site.github.url }}/img/routebuddy-banner.png){:.img-thumbnail}
+![RouteBuddy]({{ site.url }}/img/routebuddy-banner.png){:.img-thumbnail}
 
 ## Atlas
 Now to Atlas. I have it running on my iPhone 6s and iPad mini and it works really well.
