@@ -18,6 +18,7 @@
           {% capture page_uri %}{{ category }}.html{% endcapture %}
           <li{% if page.categories contains category or page.name == page_uri %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/{{ page_uri }}" itemprop="url"><span itemprop="name">{{ category | capitalize }}</span></a></li>
           {% endfor %}
+          <li{% if page.categories contains 'other' or page.name == 'other.html' %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/other.html" itemprop="url"><span itemprop="name">Other</span></a></li>
           <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/links.html" itemprop="url"><span itemprop="name">Links</span></a></li>
           <!-- li><a href="/me.html">About</a></li -->
         </ul>
