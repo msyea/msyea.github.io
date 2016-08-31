@@ -13,7 +13,7 @@
         {% assign breadcrumbs = 1 %}
         {% for category in page.categories %}
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="/{{ category }}.html" itemprop="item"><span itemprop="name">{{ category }}</span></a>
+          <a href="/{% if site.my_categories contains category %}{{ category }}{% else %}other{% endif %}.html" itemprop="item"><span itemprop="name">{{ category }}</span></a>
           <meta itemprop="position" content="{{ breadcrumbs }}" />
         </li>
         {% assign breadcrumbs = breadcrumbs | plus: 1 %}
