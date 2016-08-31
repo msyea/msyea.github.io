@@ -34,7 +34,7 @@
               <img itemprop="url" src="{{ page.image }}" alt="{{ page.title }}" />
             </div>{% endif %}
             <p>{% if page.date %}<time class="label label-default" itemprop="datePublished dateModified" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>{% endif %}
-              {% for category in page.categories %}<span class="label label-primary" itemprop="keywords">{{ category }}</span> {% endfor %}
+              {% for category in page.categories %}<a class="label label-primary" href="/{% if site.my_categories contains category %}{{ category }}{% else %}other{% endif %}.html" itemprop="keywords">{{ category }}</a> {% endfor %}
               {% for tag in page.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
               <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
               by <a itemprop="name" href="{{ site.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
