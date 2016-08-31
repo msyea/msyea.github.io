@@ -13,81 +13,26 @@ schema: Blog
   </div>
 </div>
 <div class="row">
-  <div class="class-md-12">
-    <ul class="nav nav-tabs" role="tablist">
-      {% unless false and site.my_categories contains site.posts[0].category %}<li role="presentation" class="active"><a href="#tab-no-category" aria-controls="tab-no-category" role="tab" data-toggle="tab">Latest post</a></li>{% endunless %}
-      {% for category in site.my_categories %}
-      <li role="presentation" {% if false and forloop.first and !(site.my_categories contains site.posts[0].category) %} class="active"{% endif %}><a href="#tab-{{ category }}" aria-controls="tab-{{ category }}" role="tab" data-toggle="tab">{{ category | capitalize }}</a></li>
-      {% endfor %}
-      <li role="presentation"><a href="#tab-gallery" aria-controls="tab-gallery" role="tab" data-toggle="tab">Gallery</a></li>
-    </ul>
-    <div class="tab-content">
-      {% unless false and site.my_categories contains site.posts[0].category %}
-      <div role="tabpanel" class="tab-pane active" id="tab-no-category">
-        <p>Previous post: <a href="{{ site.posts[1].url }}">{{ site.posts[1].title }}</a>.</p>
-          <div itemprop="blogPost" itemid="{{ site.github.url }}{{ site.posts[0].url }}" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 itemprop="name"><a href="{{ site.github.url }}{{ site.posts[0].url }}" itemprop="url mainEntityOfPage">{{ site.posts[0].title }}</a></h2>
-            <meta itemprop="headline" content="{{ site.posts[0].excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
-            {% if site.posts[0].image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-              <img itemprop="url" src="{{ site.posts[0].image }}" alt="{{ site.posts[0].title }}" />
-            </div>{% endif %}
-            <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ site.posts[0].date | date_to_xmlschema }}">{{ site.posts[0].date | date_to_long_string }}</time>
-              {% for category in site.posts[0].categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
-              {% for tag in site.posts[0].tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
-              <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
-              by <a itemprop="name" href="{{ site.github.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
-              </span>
-            </p>
-            <div itemprop="articleBody">
-              {{ site.posts[0].content }}
-            </div>
-          </div>
-      </div>
-      {% endunless %}
-
-      {% for category in site.my_categories %}
-      {% assign current = site.categories[category][0]  %}
-      {% assign previous = site.categories[category][1]  %}
-      <div role="tabpanel" class="tab-pane{% if false and forloop.first and !(site.my_categories contains site.posts[0].category) %} active{% endif %}" id="tab-{{ category }}">
-        <p>This is the most recent post from
-          <a class="label label-primary" href="/{{ category }}.html">{{ category }}</a>.
-          Previous post: <a href="{{ previous.url }}">{{ previous.title }}</a>.
-        </p>
-          <div itemprop="blogPost" itemid="{{ site.github.url }}{{ current.url }}" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2 itemprop="name"><a href="{{ site.github.url }}{{ current.url }}" itemprop="url mainEntityOfPage">{{ current.title }}</a></h2>
-            <meta itemprop="headline" content="{{ current.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
-            {% if current.image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-              <img itemprop="url" src="{{ current.image }}" alt="{{ current.title }}" />
-            </div>{% endif %}
-            <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ current.date | date_to_xmlschema }}">{{ current.date | date_to_long_string }}</time>
-              {% for category in current.categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
-              {% for tag in current.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
-              <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
-              by <a itemprop="name" href="{{ site.github.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
-              </span>
-            </p>
-            <div itemprop="articleBody">
-              {{ current.content }}
-            </div>
-          </div>
-      </div>
-      {% endfor %}
-      <div role="tabpanel" class="tab-pane" id="tab-gallery">
-        <p class="text-right"><a href="https://www.flickr.com/photos/msyea/" title="See my photos on Flickr!"><img src="https://s.yimg.com/pw/images/goodies/black-see-my-photos.png" width="147" height="26" alt=""></a></p>
-        <div id="gallery" class="carousel slide" data-ride="carousel" data-id="72157662772567116">
-          <ol class="carousel-indicators"></ol>
-          <div class="carousel-inner" role="listbox"></div>
-
-          <a class="left carousel-control" href="#gallery" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#gallery" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+  <div class="home-main class-md-12">
+    {% for post in site.posts limit:1 %}
+    <p>Previous post: <a href="{{ site.posts[1].url }}">{{ site.posts[1].title }}</a>.</p>
+    <div itemprop="blogPost" itemid="{{ site.url }}{{ post.url }}" itemscope itemtype="http://schema.org/BlogPosting">
+      <h2 itemprop="name"><a href="{{ site.url }}{{ post.url }}" itemprop="url mainEntityOfPage">{{ post.title }}</a></h2>
+      <meta itemprop="headline" content="{{ post.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
+      {% if post.image %}<div class="hidden" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <img itemprop="url" src="{{ post.image }}" alt="{{ post.title }}" />
+      </div>{% endif %}
+      <p><time class="label label-default" itemprop="datePublished dateModified" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
+        {% for category in post.categories %}<a class="label label-primary" href="/{{ category }}.html"><span itemprop="keywords">{{ category }}</span></a> {% endfor %}
+        {% for tag in post.tags %}<span class="label label-info" itemprop="keywords">{{ tag }}</span> {% endfor %}
+        <span itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
+        by <a itemprop="name" href="{{ site.url }}">Simon Mayes</a> (<a href="https://twitter.com/msyea">@msyea</a>)
+        </span>
+      </p>
+      <div itemprop="articleBody">
+        {{ post.content }}
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
