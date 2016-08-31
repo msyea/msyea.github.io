@@ -1,6 +1,6 @@
 machine:
   ruby:
-    version: 2.2.4p230
+    version: 2.2.4
 
 test:
   override:
