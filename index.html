@@ -13,7 +13,7 @@ schema: Blog
   </div>
 </div>
 <div class="row">
-  <div class="home-main class-md-12">
+  <div class="home-main class-xs-12">
     {% for post in site.posts limit:1 %}
     <p>Previous post: <a href="{{ site.posts[1].url }}">{{ site.posts[1].title }}</a>.</p>
     <div itemprop="blogPost" itemid="{{ site.url }}{{ post.url }}" itemscope itemtype="http://schema.org/BlogPosting">
