@@ -16,8 +16,7 @@ schema: Blog
 </div>
 <div class="row">
   <div class="home-main col-xs-12">
-    {% for post in site.posts limit:1 %}
-    <p>Previous post: <a href="{{ site.posts[1].url }}">{{ site.posts[1].title }}</a>.</p>
+    {% for post in paginator.posts %}
     <div itemprop="blogPost" itemid="{{ site.url }}{{ post.url }}" itemscope itemtype="http://schema.org/BlogPosting">
       <h2 itemprop="name"><a href="{{ site.url }}{{ post.url }}" itemprop="url mainEntityOfPage">{{ post.title }}</a></h2>
       <meta itemprop="headline" content="{{ post.excerpt | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | truncatewords:20 }}" />
@@ -36,5 +35,38 @@ schema: Blog
       </div>
     </div>
     {% endfor %}
+  </div>
+</div>
+<div class="row">
+  <div class="class-md-12">
+    <nav aria-label="Page navigation" class="text-center">
+      <ul class="pagination">
+          {% if paginator.previous_page %}
+            <li>
+          <a href="{{ paginator.previous_page_path }}" aria-label="Previous">
+            <span aria-hidden="true">Previous</span>
+          </a>
+        </li>
+          {% else %}
+          <li class="disabled">
+            <span aria-hidden="true">Previous</span>
+          </li>
+          {% endif %}
+          {% for i in (1..paginator.total_pages) %}
+        <li{% if i == paginator.page %} class="active"{% endif %}><a href="{% if i == 1 %}/{% else %}/page{{ i }}{% endif %}">{{ i }}</a></li>
+        {% endfor %}
+          {% if paginator.next_page %}
+        <li>
+          <a href="{{ paginator.next_page_path }}" aria-label="Next">
+            <span aria-hidden="true">Next</span>
+          </a>
+      </li>
+          {% else %}
+        <li class="disabled">
+            <span aria-hidden="true">Next</span>
+        </li>
+      {% endif %}
+      </ul>
+    </nav>
   </div>
 </div>
