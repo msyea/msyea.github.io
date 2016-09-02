@@ -5,15 +5,17 @@ schema: Blog
 ---
 <div class="row">
   <meta itemprop="name" content="{{ site.name }}" />
-  <div class="col-md-12 page-header">
-    <h1 itemprop="keywords">Simon Mayes<small> - Climber and Software Engineer</small></h1>
-    <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Simon Mayes" />
+  <div class="col-xs-12">
+    <div class="page-header">
+      <h1 itemprop="keywords">Simon Mayes<small> - Climber and Software Engineer</small></h1>
+      <div class="hidden" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Simon Mayes" />
+      </div>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="home-main class-xs-12">
+  <div class="home-main col-xs-12">
     {% for post in site.posts limit:1 %}
     <p>Previous post: <a href="{{ site.posts[1].url }}">{{ site.posts[1].title }}</a>.</p>
     <div itemprop="blogPost" itemid="{{ site.url }}{{ post.url }}" itemscope itemtype="http://schema.org/BlogPosting">
