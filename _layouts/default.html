@@ -66,6 +66,40 @@
         </div>
         {% endif %}
       </div>
+      <div class="row">
+        <div class="class-md-12">
+          {% assign tp = site.posts | size  | minus:1 %}
+          <nav aria-label="Page navigation" class="text-center">
+            <ul class="pagination">
+                {% if page.next %}
+                  <li>
+                <a href="{{ page.next.url }}" aria-label="Previous">
+                  <span aria-hidden="true">Previous</span>
+                </a>
+              </li>
+                {% else %}
+                <li class="disabled">
+                  <span aria-hidden="true">Previous</span>
+                </li>
+                {% endif %}
+                {% for i in (0..tp) %}
+                  <li{% if page.id == site.posts[i].id %} class="active"{% endif %}><a href="{{ site.posts[i].url }}">{{ i | plus:1 }}</a></li>
+                  {% endfor %}
+                {% if page.previous %}
+              <li>
+                <a href="{{ page.previous.url }}" aria-label="Next">
+                  <span aria-hidden="true">Next</span>
+                </a>
+            </li>
+                {% else %}
+              <li class="disabled">
+                  <span aria-hidden="true">Next</span>
+              </li>
+            {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
     {% include footer.html %}
     {% include scripts.html %}
