@@ -5,9 +5,9 @@ tags: [strava, cycling, running]
 ---
 Look at those heat-veins across London. I've been watching the heatmaps for a
 while. They're a great way to see the ground you've covered. See
-[http://labs.strava.com/heatmap/](http://labs.strava.com/heatmap/) if you're
+[http://labs.strava.com/heatmap/ <span class="glyphicon glyphicon-new-window small" aria-hidden="true"></span>](http://labs.strava.com/heatmap/){:target="_blank"} if you're
 interested in the global map or
-[https://www.strava.com/athlete/heatmaps](https://www.strava.com/athlete/heatmaps)
+[https://www.strava.com/athlete/heatmaps <span class="glyphicon glyphicon-new-window small" aria-hidden="true"></span>](https://www.strava.com/athlete/heatmaps){:target="_blank"}
 to see yours.
 
 ## Running Heatmap
