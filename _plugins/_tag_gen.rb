@@ -4,7 +4,7 @@ module Jekyll
       @site = site
       @base = base
       @dir = dir
-      @name = 'index.html'
+      @name = tag + '.html'
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
       self.data['tag'] = tag
@@ -19,7 +19,7 @@ module Jekyll
       if site.layouts.key? 'tag_index'
         dir = site.config['tag_dir'] || 'tag'
         site.tags.keys.each do |tag|
-          write_tag_index(site, File.join(dir, tag), tag)
+          write_tag_index(site, dir, tag)
         end
       end
     end
