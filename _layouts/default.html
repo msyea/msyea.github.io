@@ -73,7 +73,7 @@
             <ul class="pagination">
                 {% if page.next %}
                   <li>
-                <a href="{{ page.next.url }}" aria-label="Previous">
+                <a href="{% if site.posts[0].id == page.next.id %}/{% else %}{{ page.next.url }}{% endif %}" aria-label="Previous">
                   <span aria-hidden="true">Previous</span>
                 </a>
               </li>
