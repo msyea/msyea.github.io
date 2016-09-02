@@ -83,7 +83,7 @@
                 </li>
                 {% endif %}
                 {% for i in (0..tp) %}
-                  <li{% if page.id == site.posts[i].id %} class="active"{% endif %}><a href="{{ site.posts[i].url }}">{{ i | plus:1 }}</a></li>
+                  <li{% if page.id == site.posts[i].id %} class="active"{% endif %}><a href="{% if i == 0 %}/{% else %}{{ site.posts[i].url }}{% endif %}">{{ i | plus:1 }}</a></li>
                   {% endfor %}
                 {% if page.previous %}
               <li>
