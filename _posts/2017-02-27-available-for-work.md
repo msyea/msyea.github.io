@@ -3,7 +3,7 @@ title: Available for Work
 category: technology
 tags: [javascript]
 ---
-<div class="alert alert-info">I am available for work full-time from 3rd April. I am also available from the 6th-17th March.</div>
+<div class="alert alert-info">I am available for contracting full-time from 3rd April. I am also available from the 6th-17th March.</div>
 
 I am looking for javascript opportunities. I am a full-stack developer currently focussing on node.js/Express based backend apps and React based frontend apps.
 
