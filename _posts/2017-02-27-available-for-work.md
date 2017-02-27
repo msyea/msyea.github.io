@@ -11,7 +11,7 @@ I have been working professionally as a software engineer for over 10 years (sin
 
 See my [Stack Overflow CV](http://stackoverflow.com/cv/msyea). Contact me on myfirstname@msyea.co.uk (hint. my first name is Simon).
 
-Random accomplishments/projects that aren't a dump of keywords:
+### Random accomplishments/projects that aren't a dump of keywords:
 
 * The first decent web app I wrote in 2004 was a theatre booking app that had a flash frontend, which allowed users to select their seat from available seats on an auditorium floorplan. The backend was PHP+MySQL.
 * Building robots using with arduino and raspberry pi when they first came to market. Building a controller node.js server and webapp to control them. Studying computer vision.
