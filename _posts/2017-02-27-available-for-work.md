@@ -17,6 +17,6 @@ Random accomplishments/projects that aren't a dump of keywords:
 * Building robots using with arduino and raspberry pi when they first came to market. Building a controller node.js server and webapp to control them. Studying computer vision.
 * Taking a half-baked implementation of the Internet Printing Protocol and building a node.js app that could pretend to be a printer.
 * Taking a half-baked implementation of the WebDAV protocol and doing creative things with it - node.js.
-* Experimenting with 2 way SMS applications - node.js.
+* Experimenting with 2-way SMS as an interface with Google Apps - node.js.
 * Streaming data from satellite transmitters and turning them into Strava tracks - node.js.
 * Building an offline HTML5 mobile app very early on after being blown away by the [FT App](https://app.ft.com).
