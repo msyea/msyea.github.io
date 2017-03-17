@@ -22,6 +22,9 @@
           <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/links.html" itemprop="url"><span itemprop="name">Links</span></a></li>
           <!-- li><a href="/me.html">About</a></li -->
         </ul>
+        {% unless page.name == 'index.html' %}
+          <a class="btn btn-danger navbar-btn navbar-right" href="http://stackoverflow.com/cv/msyea">Hire Me</a>
+        {% endunless %}
         <form id="search" class="navbar-form navbar-right" role="search" action="/search.html">
           <div class="form-group">
             <input type="text" class="form-control" name="q" placeholder="Search">
