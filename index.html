@@ -39,26 +39,6 @@ schema: Blog
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="class-md-12">
-        {% assign tp = site.posts | size  | minus:1 %}
-        <nav aria-label="Page navigation" class="text-center">
-          <ul class="pagination">
-              <li class="disabled">
-                <span aria-hidden="true">Previous</span>
-              </li>
-              {% for i in (0..tp) %}
-                <li{% if post.id == site.posts[i].id %} class="active"{% endif %}><a href="{% if i == 0 %}/{% else %}{{ site.posts[i].url }}{% endif %}">{{ i | plus:1 }}</a></li>
-                {% endfor %}
-            <li>
-              <a href="{{ site.posts[1].url }}" aria-label="Next">
-                <span aria-hidden="true">Next</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
   {% endfor %}
   </div>
   <div class="col-md-3">
@@ -70,3 +50,25 @@ schema: Blog
     </ul>
   </div>
 </div>
+{% for post in site.posts limit:1 %}
+<div class="row">
+  <div class="class-md-12">
+    {% assign tp = site.posts | size  | minus:1 %}
+    <nav aria-label="Page navigation" class="text-center">
+      <ul class="pagination">
+          <li class="disabled">
+            <span aria-hidden="true">Previous</span>
+          </li>
+          {% for i in (0..tp) %}
+            <li{% if post.id == site.posts[i].id %} class="active"{% endif %}><a href="{% if i == 0 %}/{% else %}{{ site.posts[i].url }}{% endif %}">{{ i | plus:1 }}</a></li>
+            {% endfor %}
+        <li>
+          <a href="{{ site.posts[1].url }}" aria-label="Next">
+            <span aria-hidden="true">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endfor %}
