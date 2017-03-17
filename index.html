@@ -63,9 +63,9 @@ schema: Blog
   </div>
   <div class="col-md-3">
     <h4>Recent posts</h4>
-    <ul class="list-unstyled">
+    <ul class="homepage-list list-unstyled">
       {% for post in site.posts %}
-      <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+      <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> {% for category in post.categories %}<a class="label label-primary pull-right" href="/{% if site.my_categories contains category %}{{ category }}{% else %}other{% endif %}.html">{{ category }}</a> {% endfor %}</li>
       {% endfor %}
     </ul>
   </div>

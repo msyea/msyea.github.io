@@ -205,6 +205,10 @@ $black: #2F4F4F; // DarkSlateGray -
   }
 }
 
+ul.homepage-list li > .label {
+  margin-top: .2em;
+}
+
 footer {
   margin-top: 1em;
   a.btn {
