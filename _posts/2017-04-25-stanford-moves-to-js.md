@@ -6,7 +6,7 @@ tags: [compsci]
 I came across [this](https://www.theregister.co.uk/2017/04/24/stanford_tests_javascript_in_place_of_java/) article
 on [The Register](https://www.theregister.co.uk) this morning whilst perusing the tech press over a coffee.
 
-The crux of it is that Stanford University has moved away from Java to Javascript for
+The crux of it is that Stanford University has moved from Java to Javascript for
 it's introductory computer science course. This pretty interesting.
 
 CompSci courses tending to be years in the making and behind the curve on what is trending in software. Does this
@@ -16,7 +16,7 @@ I'm not totally convinced that moving to Javascript is a good idea. Javascript i
 many respects. Instead of the "normal" "classical" object class inheritance it uses a prototype inheritance chain.
 Most variables are objects and it's dynamically typed. If teaching CompSci, it probably most beneficial to
 stick with a more "traditional" language that has all these "strict" constructs in. I find it best
-to learn in a more traditional environment and then move away from this rather
+to learn in a more traditional environment and then move away from this, rather
 than learning in a loose-and-fast environment and then trying to move back to a more formal environment.
 
 However on balance, javascript is very popular and has matured significantly that people are now writing much higher

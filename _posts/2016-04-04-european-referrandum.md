@@ -19,7 +19,7 @@ sovereign rights of constituent countries, creating pointless red-tape and's pre
 supranational federal republic.
 
 Cameron was an idiot. He was never going significantly change the EU or our relationship
-with it. The EU has gone far to far and is such a vast self-serving beast a softly-softly approach
+with it. The EU has gone far too far and is such a vast self-serving beast a softly-softly approach
 is not going to fix it. He was always going to fail and then be on the back foot at
 the referendum. In order to establish a fundamental change the EU needs to be destroyed and rebuilt as something far simpler.
 Economically and politically this is going to hurt everyone but it's something that needs to happen. I originally wanted
