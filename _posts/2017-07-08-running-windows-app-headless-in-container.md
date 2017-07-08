@@ -12,6 +12,7 @@ provide complete or consistent data for UK stocks (we're interested in the funda
 technical data points). So we had to find an alternative datasource, and boy was this hard.
 
 We evaluated the following sources:
+
 * Reuters
 * Bloomberg
 * LSE
@@ -61,6 +62,7 @@ I then spun up an Ubuntu VM, installed Wine and again, hey presto, it worked out
 Now how to I squeeze it into my node Docker container that the app actually runs in...
 
 So here we go:
+
 ```bash
 # in macOS terminal
 $ docker run -it node:6.11.0 bash
@@ -78,6 +80,7 @@ $ docker run -it node:6.11.0 bash
 # Make sure that your X server is running and that $DISPLAY is set correctly.
 ```
 I'm like oh, win32, old school... let's try again:
+
 ```bash
 > dpkg --add-architecture i386 && apt-get update &&
   apt-get install wine32 -y
@@ -96,6 +99,7 @@ run X server locally on macOS and if I enable networking, I can add a display to
 my container. I was like WTF? This is magic. Let's do it.
 
 On my mac:
+
 ```bash
 $ brew cask install xquartz
 $ open -a XQuartz
@@ -108,6 +112,7 @@ $ xhost + $ip
 # x.x.x.x being added to access control list
 ```
 Then the moment of truth do (repeat the above install):
+
 ```bash
 $ docker run -e DISPLAY=x.x.x.x:0 -v /tmp/.X11-unix:/tmp/.X11-unix -it node:6.11.0 bash
 # repeat install above
@@ -121,6 +126,7 @@ After trawling iqfeed forums and elsewhere on the web I found that the solution 
 WineHQ Debian packages https://wiki.winehq.org/Debian instead.
 
 So here we go again:
+
 ```bash
 > apt-get purge wine* && apt-get autoremove && rm -rf .wine
 > dpkg --add-architecture i386
@@ -141,6 +147,7 @@ So here we go again:
 
 This time it downloaded the dependences and worked!! Now for the critical test, does
 the installed program work?
+
 ```bash
 > wine .wine/drive_c/Program\ Files\ \(x86\)/DTN/IQFeed/iqconnect.exe
 ```
