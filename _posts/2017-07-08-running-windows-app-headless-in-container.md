@@ -5,7 +5,7 @@ tags: [nodejs]
 ---
 **Skip to "Now the meat of the post" if financial data doesn't interest you.**
 
-I had a problem. I have been building a data visualisation app in Node/React for
+I had a problem. I have been building a data analysis/visualisation app in Node/React for
 a client and have been sourcing my data from the undocumented/deprecated Yahoo Finance API.
 It turns out that (surprisingly) the *undocumented/deprecated* Yahoo Finance API doesn't
 provide complete or consistent data for UK stocks (we're interested in the fundamental and
@@ -25,23 +25,22 @@ We evaluated the following sources:
 * Quandl
 
 About half didn't provide real-time or delayed prices (they only had historical) and/or
-didn't provide enough fundamental/technical signals. Also some we far too expensive ($15k+ pa).
-And one didn't respond (Reuters, disappointingly I'm looking at you).
+didn't provide enough fundamental/technical signals. Also some were far too expensive ($15k+ pa).
+And one didn't respond (Reuters, disappointingly, I'm looking at you).
 
 **The stand out winner was DTN** (although subsequently we found out their fundamental/technical data
-  was incomplete and we've had to pivot to modelling US stocks, rather the UK but they may introduce
-  enhanced UK data in the future).
+  was incomplete for UK stocks and we had to pivot to US stocks to complete the MVP - they might resolve this issue).
 
-Data source problem solved... but not quite. They don't provide an internet API, they only provide
-a proxy agent that runs on the host machine, which you can communicate with via a TCP/IP socket...
+Data source problem solved... but not quite. DTN don't provide an internet API, they only provide
+a proxy agent that runs on a host machine, which you can communicate with locally via a TCP/IP socket...
 
 So I had a new host of problems... i). write a streaming socket client in js and ii). workout how to run
 this IQFeed agent in "production".
 
 Writing the client was relatively easy. i). write a pretty wrapper around `net.Socket`, ii). connect to a
-few ports, iii). do an auth handshake and configure their client (using their propriety API) and iv). choose
+few ports, iii). do an auth handshake and configure their client (using their propriety streaming API) and iv). choose
 the stocks that I want to watch, and hey presto, I now have a streaming source of data. I even wrapped the calls
-in promises, so you can do: (the example below batches and tracks 6 `socket.write` and `Event: 'data'`)
+in promises, so you can do: (the example below batches and tracks 6 `socket.write` and `Event: 'data' events`)
 
 ```js
 iqFeedClient.getLatest(['AAPL', 'GOOGL'])
@@ -55,8 +54,9 @@ info about their propriety API. Also this is why there are no screenshots :-(
 
 # Now the meat of the post
 
-Anyway, now to move onto the bigger problem. How to get the IQFeed agent in production. I noticed that
-their macOS version was their Windows version but packaged using WineBottler, so Wine was my starting point.
+Anyway, now to move onto the bigger problem. How to get the [IQFeed](http://www.iqfeed.net/) agent in production. I noticed that
+their macOS version was identical to their Windows version but packaged using [WineBottler](http://winebottler.kronenberg.org/),
+so [Wine](https://www.winehq.org/) was my starting point.
 
 I then spun up an Ubuntu VM, installed Wine and again, hey presto, it worked out of the box. Perfect.
 Now how to I squeeze it into my node Docker container that the app actually runs in...
@@ -94,8 +94,8 @@ I didn't really know what X server but I was aware that running a windows GUI in
 a linux non-GUI OS was going to be difficult.
 
 After a bit of Googling I found this excellent post by [Fredrik Averpil](https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/)
-(credit for getting XQuarts and Docker working all his) It basically tells me I can
-run X server locally on macOS and if I enable networking, I can add a display to
+(credit for getting XQuartz and Docker working all his). It basically tells me how I can
+run X server locally on macOS and if I enable networking, I can share a display with
 my container. I was like WTF? This is magic. Let's do it.
 
 On my mac:
@@ -118,11 +118,11 @@ $ docker run -e DISPLAY=x.x.x.x:0 -v /tmp/.X11-unix:/tmp/.X11-unix -it node:6.11
 # repeat install above
 > wine iqfeed_client.exe
 ```
-I was like OMG. A Windows Installer running in a debian/node container has just appeared on my Mac desktop. Mind blown.
+I was like OMG. A Windows Installer running in a debian/node container on Docker has just appeared on my Mac desktop. **Mind blown.**
 
-Then halfway through the install it hanged... just hanged... "Microsoft Visual C++ 2014 Update 4 Redistributable not found!". Microsoft LOL.
+Then halfway through the install it hanged... just hanged...: "Microsoft Visual C++ 2014 Update 4 Redistributable not found!". Microsoft LOL.
 
-After trawling iqfeed forums and elsewhere on the web I found that the solution was to use the official
+After trawling IQFeed forums and elsewhere on the web I found that the solution was to use the official
 WineHQ Debian packages https://wiki.winehq.org/Debian instead.
 
 So here we go again:
@@ -176,6 +176,7 @@ $ docker run -it node:6.11.0 bash
 > apt-get install -y xvfb
 > Xvfb :99 & # start and detach
 > DISPLAY=:99 wine .wine/drive_c/Program\ Files\ \(x86\)/DTN/IQFeed/iqconnect.exe
+# .. and it just hangs there waiting for a socket connection...
 ```
 
 It looked like it worked... will work with javascript?
@@ -183,7 +184,7 @@ It looked like it worked... will work with javascript?
 ```js
 // start up iqconnect.exe
 exec('Xvfb :99 & DISPLAY=:99 wine "/.wine/drive_c/Program Files (x86)/DTN/IQFeed/iqconnect.exe"')
-// wait a bit to be safe
+// wait a bit to be safe (clearly I'll use a more robust method in prod)
 setTimeout(() => {
   const socket = new Socket()
   socket.connect(port, () => console.log('connected to server!'))
@@ -194,7 +195,7 @@ And then I got those magic words: "connected to server!".
 
 Well that was 5 hours of fun!
 
-Finally can I wrap can I turn all of this into a Docker image?
+Finally, can I turn all of this into a Docker image?
 
 ```
 FROM node:6.11.0
@@ -225,4 +226,4 @@ This is now running successfully in production. I hope it opens up opportunities
 to people who face similar problems.
 
 Also I'm just a javascript developer, so if anyone has advice on security or
-other optimisations (particularly docker image size) please get in touch.
+other optimisations (wine, Xvfb, docker image size) please get in touch.
