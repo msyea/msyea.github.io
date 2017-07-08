@@ -44,7 +44,7 @@ the stocks that I want to watch, and hey presto, I now have a streaming source o
 in promises, so you can do: (the example below batches and tracks 6 `socket.write` and `Event: 'data'`)
 
 ```js
-iqFeedClient.getLatest(['AAPL', 'GOOGL')
+iqFeedClient.getLatest(['AAPL', 'GOOGL'])
   .then(data => {
     console.log(data['AAPL'])
   })
