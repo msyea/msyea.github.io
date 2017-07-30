@@ -3,7 +3,9 @@ title: Introducing Edilora
 category: technology
 tags: [edilora]
 ---
+<p class="lead">
 I'm proud to introduce my new side-project [Edilora](https://edilora.com): The <abbr title="Command and Control">C2</abbr> and Planning app for organisations deploying teams in an outdoor environment.
+</p>
 
 Essentially, if you send people to go get lost in the mountains and have some sort of corporate responsibility over them (implied or otherwise) it will allow you to manage and document your risk assessment process, route planning and then monitor them in realtime using a variety of satellite trackers, low-data apps or predefined SMS <abbr title="Location Status Reports">locstats</abbr> messages. Using their near realtime locstats and predefined checkpoints you can see if they're on track to achieve objectives long before the objective is expected.
 
