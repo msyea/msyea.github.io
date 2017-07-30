@@ -4,7 +4,7 @@ category: technology
 tags: [edilora]
 ---
 <p class="lead">
-I'm proud to introduce my new side-project <a href="https://edilora.com">Edilora</a>: The <abbr title="Command and Control">C2</abbr> and Planning app for organisations deploying teams in an outdoor environment.
+I'm proud to introduce my new side-project: <a href="https://edilora.com">Edilora</a>, The <abbr title="Command and Control">C2</abbr> and Planning app for organisations deploying teams in an outdoor environment.
 </p>
 
 <p class="text-center"><a class="btn btn-primary btn-lg" href="https://edilora.com">Go to Edilora</a></p>
