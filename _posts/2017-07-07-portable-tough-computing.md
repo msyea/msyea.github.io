@@ -1,5 +1,5 @@
 ---
-title: Samsung Dex
+title: Portable Tough Computing
 category: technology
 tags: [nodejs, galaxy 8+]
 ---
