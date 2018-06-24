@@ -42,6 +42,8 @@ spreadsheet. Therefore if you wish to dip your toe into web development you can 
 I’m sure recommending VBA in 2018 isn’t the best start to a programming career but if the OP engages 
 with “programming in general” and creates some “usable beasts [of a spreadsheet app]” [Ed. 
 “spreadsheet app” - you’re joking right], instead of “trivial contrived exercises” they will be in a 
-better position than someone that build a web/mobile app once.
+better position than someone that build a web/mobile app once. The terrible habits that they will 
+pick up can be beaten out of them at a future date. Surely it’s better to have habits than no 
+opinion at all.
 
 
