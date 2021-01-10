@@ -32,9 +32,4 @@ The first step is to "dockerise" the GitHub, luckily @myoung34 has done this for
 
 This makes for a very straightforward ECS Task Definition:
 
-<style type="text/css">
-  .gist {width:500px !important;}
-  .gist-file
-  .gist-data {max-height: 500px;max-width: 500px;}
-</style>
 <script src="https://gist.github.com/msyea/e1eeecafc80a431070ac7d7953886346.js"></script>

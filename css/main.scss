@@ -1,23 +1,23 @@
 ---
 ---
-$cream: #FFF8DC; // Cornsilk -
+
+$cream: #fff8dc; // Cornsilk -
 $maroon: #800000; // Maroon -
 $blue: #004288; // MidnightBlue -
 $green: #004225; // British Racing Green
-$black: #2F4F4F; // DarkSlateGray -
+$black: #2f4f4f; // DarkSlateGray -
 
 @import "bootstrap";
 
-
-@mixin roundel ($size) {
+@mixin roundel($size) {
   width: $size;
   height: $size;
   background-color: $green;
   border-radius: $size/2;
   .ring {
     position: relative;
-    width: ($size/3)*2;
-    height: ($size/3)*2;
+    width: ($size/3) * 2;
+    height: ($size/3) * 2;
     background-color: $maroon;
     border-radius: $size/3;
     left: $size/6;
@@ -33,14 +33,14 @@ $black: #2F4F4F; // DarkSlateGray -
     }
   }
 }
-@mixin flag ($size) {
+@mixin flag($size) {
   width: $size;
-  height: ($size/3)*2;
+  height: ($size/3) * 2;
   background-color: $green;
   .ring {
     position: relative;
-    width: ($size/3)*2;
-    height: ($size/3)*2;
+    width: ($size/3) * 2;
+    height: ($size/3) * 2;
     background-color: $maroon;
     border-radius: $size/3;
     left: $size/6;
@@ -55,13 +55,13 @@ $black: #2F4F4F; // DarkSlateGray -
     }
   }
 }
-@mixin flash ($size) {
+@mixin flash($size) {
   width: $size;
   height: $size/2;
   background-color: $green;
   .ring {
     position: relative;
-    width: ($size/3)*2;
+    width: ($size/3) * 2;
     height: $size/2;
     background-color: $maroon;
     left: $size/6;
@@ -88,16 +88,20 @@ $black: #2F4F4F; // DarkSlateGray -
 }
 
 .roundel-nav {
-  @include roundel($navbar-height*0.80);
+  @include roundel($navbar-height * 0.8);
   display: inline-block;
-  margin-top: -$navbar-height*0.20;
-  margin-right: $navbar-height*0.20;
+  margin-top: -$navbar-height * 0.2;
+  margin-right: $navbar-height * 0.2;
 }
 .navbar-brand > span {
   display: inline-block;
 }
 
-.cream-background, .maroon-background, .blue-background, .green-background, .black-background {
+.cream-background,
+.maroon-background,
+.blue-background,
+.green-background,
+.black-background {
   display: inline-block;
   color: white;
   width: 100px;
@@ -166,14 +170,14 @@ $black: #2F4F4F; // DarkSlateGray -
 }
 
 @media (max-width: 767px) {
-    #main-container {
-        min-height: 200px;
-    }
+  #main-container {
+    min-height: 200px;
+  }
 }
 @media (min-width: 768px) {
-    #main-container {
-        min-height: 400px;
-    }
+  #main-container {
+    min-height: 400px;
+  }
 }
 .nav-tabs {
   margin-bottom: 15px;
@@ -206,7 +210,7 @@ $black: #2F4F4F; // DarkSlateGray -
 }
 
 ul.homepage-list li > .label {
-  margin-top: .2em;
+  margin-top: 0.2em;
 }
 
 footer {
@@ -215,7 +219,6 @@ footer {
     margin-bottom: 1em;
   }
 }
-
 
 // Usage
 a.link-hidden {
@@ -227,14 +230,18 @@ a.link-hidden {
 }
 
 #gh-follow {
-    background-color: transparent;
-    border: none;
-    overflow: hidden;
-    width: 115px;
-    height: 20px;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  width: 115px;
+  height: 20px;
 }
 
 // need to add responsive for this!
 .home-main {
   min-height: 400px;
+}
+
+.gist-file .gist-data {
+  max-height: 500px;
 }
