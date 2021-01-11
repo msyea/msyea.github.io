@@ -53,7 +53,7 @@ This makes for a very straightforward ECS Task Definition:
 
 After you deploy the task definition as a 5x service to ECS you get:
 
-![github action settings](/img/gha-settings.png)
+![github action settings](/img/gha-settings.png){.lol width="1"}
 
 ### Testing with a workflow
 
