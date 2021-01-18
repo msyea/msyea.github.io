@@ -74,8 +74,8 @@ I logged into the box and had a poke around with `docker inspect [container name
 
 | Environment Variable                     | Documentation |
 | ---------------------------------------- | ------------- |
-| `ECS_CONTAINER_METADATA_URI`             | https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-metadata-endpoint-v4.html |
-| `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` | https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html |
+| `ECS_CONTAINER_METADATA_URI`             | [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-metadata-endpoint-v4.html]() |
+| `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` | [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html]() |
 
 As we can see from the self-titled environment variables, `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` looks like our saviour 🎉:
 
