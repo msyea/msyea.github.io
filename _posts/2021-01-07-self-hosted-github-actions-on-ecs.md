@@ -62,11 +62,11 @@ After you deploy the task definition as a x5 service to ECS you get:
 
 It successfully triggers the workflow and picks up the task role: `arn:aws:iam:::role/gha-taskrole`.
 
-<img src="/img/gha-workflow1.png" alt="github workflow1" width="img-responsive img-thumbnail" />
+<img src="/img/gha-workflow1.png" alt="github workflow1" class="img-responsive img-thumbnail" />
 
 But I have a gut feeling the "docker in docker" container might not go to plan:
 
-<img src="/img/gha-workflow2.png" alt="github workflow2" width="img-responsive img-thumbnail" />
+<img src="/img/gha-workflow2.png" alt="github workflow2" class="img-responsive img-thumbnail" />
 
 Boohoo 😭 It's picked up the `ecsInstanceRole`, not the Task Role. This makes total sense as the instance is created by docker, not ECS but it's annoying. How can we get around this?
 
