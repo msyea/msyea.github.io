@@ -20,6 +20,7 @@
           {% endfor %}
           <li{% if page.categories contains 'other' or page.name == 'other.html' %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/other.html" itemprop="url"><span itemprop="name">Other</span></a></li>
           <li{% if page.categories contains 'links' or page.name == 'links.html' %} class="active"{% endif %} itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="/links.html" itemprop="url"><span itemprop="name">Links</span></a></li>
+          <li><a href="https://news.ycombinator.com/favorites?id=msyea"><span itemprop="name">HN Favourites</span></a></li>
           <!-- li><a href="/me.html">About</a></li -->
         </ul>
         {% unless page.name == 'index.html' %}
