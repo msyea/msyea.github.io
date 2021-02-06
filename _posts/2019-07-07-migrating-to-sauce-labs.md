@@ -1,5 +1,5 @@
 ---
-title: Migrating to Sauce
+title: Migrating to Sauce Labs
 category: technology
 tags: [testing, integration-tests, sauce-labs, selenium]
 ---
