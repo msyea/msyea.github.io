@@ -3,6 +3,14 @@ title: Recommending VBA in 2018
 category: technology
 tags: [excel,vba,programming]
 ---
+# Update in 2021
+It may not be VBA anyone but I still stand by my original advice:
+> Excel formulas, the world’s most popular programming language, is now Turing-complete. Go check it out! - Satya Nadella - Microsoft CEO
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6765021446432428032" height="664" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
+# Original Post
+
 I just got asked a classic question from a friend: "I'm thinking of learning a programming
 language. Which one do you recommend?". Instead of recommending JavaScript, which is my normal 
 response, I recommended VBA and Excel. Let me explain why. Please tweet me if you can: i). 
