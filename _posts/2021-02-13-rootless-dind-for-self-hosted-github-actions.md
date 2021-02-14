@@ -3,7 +3,7 @@ title: Rootless DIND for self-hosted GitHub Actions runners
 category: technology
 tags: [rootless,docker,github,github-actions]
 ---
-This post follows my earlier post [Self-hosted GitHub Actions on ECS](/self-hosted-github-actions-on-ecs.html).
+This post follows my earlier post [Self-hosted GitHub Actions on ECS](/technology/2021/01/07/self-hosted-github-actions-on-ecs.html).
 
 On refection my earlier implementation of "docker in outside docker" had many flaws. Iit shared state between runners and would have resulted in container name, network and other collisions in docker. I continued to search for another solution and discovered that was what I thought was “docker in docker” was in fact “docker outside docker”, and that there was another way.
 
@@ -27,6 +27,6 @@ What now? Just toggle the flag and run all as root? I didn’t think this was ac
 
 I quickly jumped into AWS, spun up a Amazon Linux 2, installed docker and git and checkout out my code. OMG. It worked! I then spend a while rewriting my [Dockerfile](https://github.com/msyea/github-actions-runner/blob/main/Dockerfile) and it toggled from working to not working. What was going on? I discovered there was an issue with the rootless [user UID](https://www.google.com/search?q=error:+failed+to+setup+UID/GID+map:+newuidmap+39+%5B0+1000+1+1+100000+65536+65537+100000+65536%5D+failed:+newuidmap:+write+to+uid_map+failed:+Invalid+argument). I’m still not sure what the issue is. [Please, help](https://github.com/msyea/github-actions-runner/issues/10). But with a weird hack of adding a user at `1000` and a stroke of luck by letting rootless user get assigned `1001` it works.
 
-I then spent the rest of the time using [myoung36s](https://github.com/myoung34/docker-github-actions-runner) pattern for dockerising GitHub Actions runner, and after installing a few more dependencies it appeared to work. I used it as a drop-in for my ECS approach in my [earlier article](/self-hosted-github-actions-on-ecs.html) and it is now working reliably.
+I then spent the rest of the time using [myoung36s](https://github.com/myoung34/docker-github-actions-runner) pattern for dockerising GitHub Actions runner, and after installing a few more dependencies it appeared to work. I used it as a drop-in for my ECS approach in my [earlier article](/technology/2021/01/07/self-hosted-github-actions-on-ecs.html) and it is now working reliably.
 
 A now here we are we have [github-actions-runner](https://github.com/msyea/github-actions-runner) running on ubuntu using rootless dind. I've learnt a hell of of a lot and am pretty happy with the outcome. Please share and if you can help us harden and fix the pending issues, please contribute and open a PR.
