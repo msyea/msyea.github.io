@@ -3,6 +3,9 @@ title: Rootless DIND for self-hosted GitHub Actions runners
 category: technology
 tags: [rootless,docker,github,github-actions]
 ---
+> TL;DR checkout [github-actions-runner](https://github.com/msyea/github-actions-runner) running with rootless DIND on ubunu
+
+
 This post follows my earlier post [Self-hosted GitHub Actions on ECS](/technology/2021/01/07/self-hosted-github-actions-on-ecs.html).
 
 On refection my earlier implementation of "docker in outside docker" had many flaws. Iit shared state between runners and would have resulted in container name, network and other collisions in docker. I continued to search for another solution and discovered that was what I thought was “docker in docker” was in fact “docker outside docker”, and that there was another way.
