@@ -1,7 +1,7 @@
 timezone: Europe/London
 
 markdown: kramdown
-url: https://type2fun.net
+url: https://msyea.github.io
 
 gems:
   - jemoji
